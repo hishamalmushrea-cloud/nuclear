@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>عارض الوثائق — النظام النووي المعرفي</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+<div id="docs">
+  <header>
+    <h1>📄 عارض الوثائق</h1>
+    <div class="sub">كل ملفات <code>.md</code> في المستودع — تُعرض مُنسّقة داخل المتصفح</div>
+    <div class="toolbar">
+      <a class="btn" href="index.html">🧭 الخريطة التفاعلية</a>
+      <a class="btn" href="progress.html">📈 ملف المتعلّم</a>
+      <a class="btn" href="../index.html">🏠 الرئيسية</a>
+      <input id="filter" type="search" placeholder="تصفية الملفات بالاسم…" autocomplete="off">
+      <span id="count" class="stats"></span>
+    </div>
+  </header>
+  <main>
+    <nav id="sidebar"><div class="empty">جارٍ تحميل الفهرس…</div></nav>
+    <article id="content">
+      <div class="empty">
+        <h2>اختر ملفاً من القائمة على اليمين</h2>
+        <p>مقترح للبداية: <code>MAP/00-index.md</code> (فهرس الخريطة)،
+        ثم <code>lessons/000-where-do-we-start.md</code>،
+        ثم <code>BUILD/README.md</code>.</p>
+      </div>
+    </article>
+  </main>
+</div>
+<script src="markdown.js"></script>
+<script src="docs.js"></script>
+</body>
+</html>

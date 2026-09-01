@@ -1,0 +1,240 @@
+{
+ "generated": true,
+ "count": 32,
+ "groups": [
+  {
+   "key": "MAP",
+   "label": "الخريطة الكبرى",
+   "icon": "🧭",
+   "items": [
+    {
+     "path": "MAP/00-index.md",
+     "title": "MAP/00 — الفهرس الشامل وطريقة استخدام النظام",
+     "group": "MAP",
+     "size": 8292
+    },
+    {
+     "path": "MAP/01-grand-tree.md",
+     "title": "MAP/01 — الشجرة الكبرى للعلوم والتكنولوجيا النووية",
+     "group": "MAP",
+     "size": 69608
+    },
+    {
+     "path": "MAP/02-levels-0-14.md",
+     "title": "MAP/02 — المستويات الخمسة عشر (0 إلى 14)",
+     "group": "MAP",
+     "size": 31246
+    },
+    {
+     "path": "MAP/03-prerequisites.md",
+     "title": "MAP/03 — جدول المتطلبات السابقة (Prerequisites)",
+     "group": "MAP",
+     "size": 46250
+    },
+    {
+     "path": "MAP/04-study-order.md",
+     "title": "MAP/04 — ترتيب الدراسة (Topological Study Order)",
+     "group": "MAP",
+     "size": 40281
+    },
+    {
+     "path": "MAP/05-levels-and-gates.md",
+     "title": "MAP/05 — نظام المستويات وبوابات الانتقال",
+     "group": "MAP",
+     "size": 6540
+    },
+    {
+     "path": "MAP/06-tracks.md",
+     "title": "MAP/06 — المسارات التخصصية (A → N)",
+     "group": "MAP",
+     "size": 9391
+    },
+    {
+     "path": "MAP/07-commonly-forgotten.md",
+     "title": "MAP/07 — ما ينساه الطلاب عادةً (قائمة تدقيق مضادة)",
+     "group": "MAP",
+     "size": 7822
+    },
+    {
+     "path": "MAP/08-discovered-fields.md",
+     "title": "MAP/08 — «مجالات إضافية اكتشفها الفريق بنفسه»",
+     "group": "MAP",
+     "size": 9049
+    },
+    {
+     "path": "MAP/09-sources.md",
+     "title": "MAP/09 — المصادر: السجلّ، التصنيف، وكيفية التدقيق (X.3)",
+     "group": "MAP",
+     "size": 9638
+    },
+    {
+     "path": "MAP/10-tools-software.md",
+     "title": "MAP/10 — الأدوات البرمجية وأكواد المحاكاة (استخدام أكاديمي وبحثي)",
+     "group": "MAP",
+     "size": 7190
+    },
+    {
+     "path": "MAP/11-projects.md",
+     "title": "MAP/11 — المشاريع (من المبتدئ إلى البحثي)",
+     "group": "MAP",
+     "size": 7816
+    },
+    {
+     "path": "MAP/12-assessments.md",
+     "title": "MAP/12 — نظام الاختبارات والتقييم",
+     "group": "MAP",
+     "size": 5720
+    },
+    {
+     "path": "MAP/13-open-problems.md",
+     "title": "MAP/13 — المسائل المفتوحة وتصنيف يقين المعرفة (X.15)",
+     "group": "MAP",
+     "size": 9341
+    },
+    {
+     "path": "MAP/14-frontiers-2026.md",
+     "title": "MAP/14 — آخر التطورات (حتى 1 سبتمبر 2026)",
+     "group": "MAP",
+     "size": 11005
+    },
+    {
+     "path": "MAP/15-agent-system.md",
+     "title": "MAP/15 — نظام تشغيل الوكيل متعدد التخصصات (X.1 → X.34)",
+     "group": "MAP",
+     "size": 14286
+    },
+    {
+     "path": "MAP/16-zero-to-researcher.md",
+     "title": "MAP/16 — من الصفر إلى الباحث (ثلاثة مسارات زمنية)",
+     "group": "MAP",
+     "size": 5970
+    },
+    {
+     "path": "MAP/17-expansion-log.md",
+     "title": "MAP/17 — سجل توسّع الخريطة (نظام حيّ)",
+     "group": "MAP",
+     "size": 3633
+    }
+   ]
+  },
+  {
+   "key": "lessons",
+   "label": "الدروس",
+   "icon": "📚",
+   "items": [
+    {
+     "path": "lessons/000-where-do-we-start.md",
+     "title": "الوحدة 0.1 — ما هذا المجال؟ وكيف نقرأ أرقامه؟",
+     "group": "lessons",
+     "size": 9724
+    },
+    {
+     "path": "lessons/001-exponents-and-logs.md",
+     "title": "الوحدة 1.1 — الأسس واللوغاريتمات والتدوين العلمي",
+     "group": "lessons",
+     "size": 8438
+    },
+    {
+     "path": "lessons/002-algebra-basics.md",
+     "title": "الوحدة 1.2 — الجبر: إعادة ترتيب المعادلات",
+     "group": "lessons",
+     "size": 7479
+    }
+   ]
+  },
+  {
+   "key": "sims",
+   "label": "المختبرات المحاكاة",
+   "icon": "🧪",
+   "items": [
+    {
+     "path": "sims/README.md",
+     "title": "🔬 المختبرات الافتراضية (`sims/`)",
+     "group": "sims",
+     "size": 2763
+    }
+   ]
+  },
+  {
+   "key": "BUILD",
+   "label": "اصنعها بنفسك",
+   "icon": "🛠️",
+   "items": [
+    {
+     "path": "BUILD/01-diffusion-cloud-chamber.md",
+     "title": "🧊 المشروع 01 — غرفة السحاب المنتشرة (ترى بها أثر الجسيم بعينك)",
+     "group": "BUILD",
+     "size": 6869
+    },
+    {
+     "path": "BUILD/02-electroscope.md",
+     "title": "⚡ المشروع 02 — مِكشاف الأوراق (Electroscope): ترى التأيّن بعينك",
+     "group": "BUILD",
+     "size": 6156
+    },
+    {
+     "path": "BUILD/03-build-your-own-simulator.md",
+     "title": "💻 المشروع 03 — ابنِ محاكيك بنفسك (من سطر واحد إلى مختبر كامل)",
+     "group": "BUILD",
+     "size": 6900
+    },
+    {
+     "path": "BUILD/04-real-data-mini-project.md",
+     "title": "🔬 المشروع 04 — مشروع ببيانات حقيقية منشورة (تصبح باحثاً فعلياً)",
+     "group": "BUILD",
+     "size": 6405
+    },
+    {
+     "path": "BUILD/README.md",
+     "title": "🛠️ «كيف أصنع؟» — مشاريع حقيقية تبنيها بيدك",
+     "group": "BUILD",
+     "size": 3625
+    }
+   ]
+  },
+  {
+   "key": "progress",
+   "label": "ملف المتعلّم",
+   "icon": "📈",
+   "items": [
+    {
+     "path": "progress/gap-report-template.md",
+     "title": "تقرير الفجوات المعرفية (X.20) — قالب نهاية كل مرحلة",
+     "group": "progress",
+     "size": 2233
+    },
+    {
+     "path": "progress/notebook-template.md",
+     "title": "دفتر الباحث (X.18) — قالب لكل موضوع مدروس",
+     "group": "progress",
+     "size": 2485
+    },
+    {
+     "path": "progress/notebook.md",
+     "title": "## جلسة 2026-09-01 — الدرس 002",
+     "group": "progress",
+     "size": 136
+    },
+    {
+     "path": "progress/profile.md",
+     "title": "ملف تقدّم المتعلّم (X.8)",
+     "group": "progress",
+     "size": 34000
+    }
+   ]
+  },
+  {
+   "key": ".",
+   "label": "الجذر",
+   "icon": "🏠",
+   "items": [
+    {
+     "path": "README.md",
+     "title": "🧭 nuclear — الخريطة الكبرى للعلوم والتكنولوجيا النووية",
+     "group": "",
+     "size": 5587
+    }
+   ]
+  }
+ ]
+}

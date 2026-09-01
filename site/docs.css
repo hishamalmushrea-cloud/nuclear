@@ -1,0 +1,78 @@
+/* docs.css — تنسيق عارض الوثائق وصفحة التقدّم */
+#docs { display: flex; flex-direction: column; height: 100vh; }
+#docs header { padding: 12px 18px; border-bottom: 1px solid var(--line); background: var(--bg2); }
+#docs header h1 { margin: 0; font-size: 20px; }
+#docs header .sub { color: var(--muted); font-size: 13px; margin-top: 2px; }
+#docs .toolbar { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.btn {
+  background: #1e2739; color: var(--fg); border: 1px solid var(--line);
+  border-radius: 8px; padding: 6px 10px; font-size: 13px; text-decoration: none;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+#docs main { flex: 1; display: flex; min-height: 0; }
+
+#sidebar {
+  width: 320px; min-width: 260px; overflow-y: auto;
+  border-left: 1px solid var(--line); background: var(--bg2); padding: 10px 8px 40px;
+}
+#sidebar .group { margin-bottom: 14px; }
+#sidebar .glabel { color: var(--accent); font-size: 13px; padding: 4px 6px; }
+#sidebar ul { list-style: none; margin: 0; padding: 0; }
+#sidebar li { margin: 1px 0; }
+#sidebar li a {
+  display: block; padding: 5px 8px; border-radius: 7px; color: var(--fg);
+  text-decoration: none; font-size: 13.5px; line-height: 1.5;
+}
+#sidebar li a:hover { background: #1e2739; }
+#sidebar li a.active { background: #24405e; color: var(--accent); }
+#sidebar li .p { display: block; color: var(--muted); font-size: 11px; padding: 0 9px 4px; }
+
+#content { flex: 1; overflow-y: auto; padding: 22px 34px 80px; }
+#content .empty { color: var(--muted); }
+#content .raw { white-space: pre-wrap; font-size: 13px; }
+.paper { max-width: 62rem; }
+.paper h1 { font-size: 26px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+.paper h2 { font-size: 21px; margin-top: 30px; color: var(--accent); }
+.paper h3 { font-size: 17px; margin-top: 22px; }
+.paper h4 { font-size: 15px; margin-top: 16px; color: #b9c8dc; }
+.paper p, .paper li { line-height: 1.9; }
+.paper code {
+  background: #1a2233; padding: 1px 5px; border-radius: 5px;
+  font-family: "SFMono-Regular", Consolas, monospace; font-size: 0.9em; direction: ltr;
+  display: inline-block;
+}
+.paper pre {
+  background: #121a29; border: 1px solid var(--line); border-radius: 10px;
+  padding: 12px 14px; overflow-x: auto; direction: ltr; text-align: left;
+}
+.paper pre code { background: none; padding: 0; display: inline; }
+.paper blockquote {
+  margin: 12px 0; padding: 8px 14px; border-right: 3px solid var(--accent);
+  background: #172032; color: #cbd7e6;
+}
+.paper table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 13.5px; }
+.paper th, .paper td { border: 1px solid var(--line); padding: 6px 9px; text-align: right; }
+.paper th { background: #1b2436; }
+.paper tr:nth-child(even) td { background: #141c2b; }
+.paper hr { border: none; border-top: 1px solid var(--line); margin: 26px 0; }
+.paper a { color: #7fb6ff; }
+
+/* صفحة التقدّم */
+#prog { display: flex; flex-direction: column; height: 100vh; }
+#prog header { padding: 12px 18px; border-bottom: 1px solid var(--line); background: var(--bg2); }
+#prog header h1 { margin: 0; font-size: 20px; }
+#prog .toolbar { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+#prog main { flex: 1; overflow-y: auto; padding: 16px 24px 80px; }
+#prog table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+#prog th, #prog td { border: 1px solid var(--line); padding: 6px 9px; text-align: right; }
+#prog th { background: #1b2436; position: sticky; top: 0; cursor: pointer; }
+#prog tr:nth-child(even) td { background: #141c2b; }
+.barwrap { background: #223049; border-radius: 4px; height: 9px; width: 110px; display: inline-block; vertical-align: middle; }
+.barfill { background: var(--accent); height: 9px; border-radius: 4px; }
+.kpis { display: flex; gap: 12px; flex-wrap: wrap; margin: 12px 0 18px; }
+.kpi { background: #172032; border: 1px solid var(--line); border-radius: 10px; padding: 10px 16px; min-width: 150px; }
+.kpi .v { font-size: 22px; color: var(--accent); }
+.kpi .l { font-size: 12px; color: var(--muted); }
+
+.mono { font-family: "SFMono-Regular", Consolas, monospace; font-size: 12px; direction: ltr; text-align: left; }
+.chk { color: var(--muted); font-size: 13px; display: inline-flex; align-items: center; gap: 5px; }

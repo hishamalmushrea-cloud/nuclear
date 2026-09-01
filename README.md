@@ -13,7 +13,8 @@
 1. [`MAP/00-index.md`](MAP/00-index.md) — الفهرس الشامل وطريقة استخدام النظام.
 2. [`MAP/01-grand-tree.md`](MAP/01-grand-tree.md) — الشجرة الكبرى (مولّدة آلياً).
 3. [`MAP/16-zero-to-researcher.md`](MAP/16-zero-to-researcher.md) — المسار من الصفر إلى الباحث.
-4. [`site/index.html`](site/index.html) — عارض تفاعلي للرسم المعرفي (شغّله: `python3 -m http.server 8000`).
+4. [`index.html`](index.html) — الصفحة الرئيسية للمعاينة في المتصفح (شغّل: `python3 -m http.server 8000`).
+5. [`site/index.html`](site/index.html) — عارض تفاعلي للرسم المعرفي · `site/docs.html` — عارض كل الوثائق · `site/progress.html` — ملف المتعلّم.
 
 ## 📁 بنية المستودع
 
@@ -26,7 +27,7 @@ lessons/     الدروس الرسمية (لكل درس اختبار مدمج ي
 sims/        🔬 مختبرات افتراضية تفاعلية (بلا أي مصدر مشعّ حقيقي)
 BUILD/       🛠️ «كيف أصنع؟» — مشاريع حقيقية تبنيها بيدك (مع قواعد السلامة والقانون)
 progress/    ملف تقدّم المتعلّم + دفتر الباحث + تقارير الفجوات
-site/        عارض الويب التفاعلي للرسم
+site/        عارض الويب: index.html (الرسم) · docs.html (الوثائق) · progress.html (التقدّم)
 ```
 
 ## 👨‍🏫 ابدأ التعلّم الآن (ثلاثة أوامر)
@@ -50,12 +51,13 @@ python3 tools/lesson.py learn 000    # الدرس الأول: الشرح ثم ا
 ```bash
 python3 tools/build.py            # تحقّق + توليد graph/ و MAP/01..04 و site/graph_data.json
 python3 tools/build.py --check    # تحقّق فقط
-python3 tools/tutor.py               # 👨‍🏫 المدرّس: يشرح ثم يسألك ثم يسجّل تقدّمك
+python3 tools/tutor.py             # 👨‍🏫 المدرّس: يشرح ثم يسألك ثم يسجّل تقدّمك
 python3 tools/lesson.py learn 000    # درس محدد + اختبار + تسجيل تلقائي
 python3 tools/progress.py show    # حالة ملف التقدّم
 python3 tools/progress.py set nuc.fission L2 78   # تحديث إتقان موضوع
 python3 tools/progress.py report  # تقرير فجوات + الجاهزية للانتقال
-python3 -m http.server 8000       # عرض site/index.html على المنفذ 8000
+python3 -m http.server 8000       # المعاينة: index.html → site/index.html · docs.html · progress.html
+python3 tools/site_index.py       # إعادة بناء فهرس الوثائق site/docs_index.json (بعد إضافة ملف .md)
 ```
 
 ## 🔒 حدود المحتوى (X.31 / X.32)
