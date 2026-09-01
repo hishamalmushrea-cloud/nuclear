@@ -1,0 +1,1227 @@
+{
+  "learner": "المتعلّم (بانتظار اختبار تحديد المستوى)",
+  "updated": "2026-09-01",
+  "notes": "لم يُجرَ اختبار تحديد المستوى بعد؛ كل القيم ابتدائية (0٪). نفّذ: python3 tools/progress.py quiz <id>",
+  "topics": {
+    "math.pre": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.algebra": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.geometry": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.trig": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.functions": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.calc1": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.calc2": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.ode": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.pde": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.linalg": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.vectors": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.complex": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.prob": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.stat": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.nummethods": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.analysis": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.advanced": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.grouptheory": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.mc": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "math.optimization": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "cs.python": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "cs.numpy": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "cs.data": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "cs.uq": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "cs.vv": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "cs.hpc": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.mech": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.energy": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.grav": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.em": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.emi": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.waves": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.thermo": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.statmech": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.relativity": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.qm1": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.qm2": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.atomic": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.molecular": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.condmat": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "phys.accel_basics": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "part.intro": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "part.sm": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "part.quarks": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "part.forces": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "part.neutrino": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "part.detectors": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "part.accel": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "part.hep": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "part.qft": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "chem.general": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "chem.structure": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "chem.bonding": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "chem.organic": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "chem.inorganic": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "chem.phys": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "chem.analytical": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "chem.materials": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "chem.radiochemistry": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "chem.nuclear": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "chem.isotope": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "chem.envradio": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "chem.hotcells": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.intro": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.nucleons": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.isotopes": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.binding": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.mass": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.stability": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.decay": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.halflife": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.series": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.reactions": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.crosssection": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.scattering": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.absorption": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.neutron": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.fission": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.fusion_basics": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.models": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.exp": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.theory": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.data": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.neutronsci": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.astro": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "nuc.structure": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.principles": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.neutroncycle": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.chain": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.criticality": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.kinetics": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.control": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.diffusion": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.transport": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.heat": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.fluids": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.thermalhyd": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.thermo_power": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.cooling": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.fuel": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.materials": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.instr": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.types": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.research": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.power": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.gen4": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.smr": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.core": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.multiphysics": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rx.economics": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fuel.intro": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fuel.resources": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fuel.fabrication": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fuel.inreactor": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fuel.spent": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fuel.storage": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fuel.reprocessing": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fuel.waste": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fuel.disposal": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fuel.transport": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fuel.decommissioning": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "mat.intro": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "mat.damage": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "mat.metals": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "mat.ceramics": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "mat.composites": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "mat.hightemp": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "mat.corrosion": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "mat.lifetime": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "mat.characterization": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "mat.fuels": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rad.types": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rad.sources": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rad.interaction": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rad.transport": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rad.dosimetry": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rad.detectors": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rad.spectroscopy": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rad.shielding": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rad.contamination": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rad.bio": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rad.metrology": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "rad.activation": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "prot.principles": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "prot.monitoring": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "prot.occupational": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "prot.lab": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "prot.emergency": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "prot.medical": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "safe.culture": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "safe.did": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "safe.systems": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "safe.hazard": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "safe.psa": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "safe.dsa": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "safe.severe": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "safe.human": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "safe.risk": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "safe.accidents": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "safe.reg": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "meas.electronics": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "meas.signal": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "meas.calibration": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "meas.detectors": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "meas.monitoring": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "meas.spectroscopy": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fus.plasma": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fus.mhd": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fus.heating": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fus.magnetic": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fus.tokamak": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fus.stellarator": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fus.inertial": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fus.alt": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fus.materials": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fus.blanket": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fus.neutronics": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fus.diagnostics": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fus.engineering": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "med.nucmed": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "med.imaging": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "med.therapy": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "med.isotopes": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "med.dosimetry_plan": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "med.rp": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "ind.ndt": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "ind.radiography": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "ind.gauges": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "ind.tracers": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "ind.sterilization": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "ind.activation_analysis": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "ind.welllogging": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "env.tracers": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "env.hydrology": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "env.climate": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "env.dating": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "env.radioecology": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "env.dispersion": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "env.agriculture": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "env.remediation": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "pol.regulatory": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "pol.law": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "pol.safeguards": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "pol.treaties": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "pol.governance": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "pol.ethics": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "sec.nonprolif": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "sec.security": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "sec.armscontrol": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "sec.deterrence": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "sec.history": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "sec.effects": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "sec.forensics": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "sec.geopolitics": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "hist.timeline": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "hist.projects": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "hist.accidents_hist": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "res.literature": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "res.sources": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "res.question": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "res.design": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "res.stats": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "res.data": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "res.reproducibility": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "res.writing": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "res.peerreview": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "res.openproblems": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.neutronimaging": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.ads": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.transmutation": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.theranostics": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.space": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.hydrogen": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.desal": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.digitaltwin": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.ml_nuclear": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.advancedmanufacturing": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.quantum": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.microreactors": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.nuclear_analytics": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.humanfactors_org": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.education": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.economics_risk": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "disc.ai_governance": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    }
+  }
+}

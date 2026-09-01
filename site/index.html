@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الخريطة الكبرى للعلوم النووية — عارض تفاعلي</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>🧭 الخريطة الكبرى للعلوم والتكنولوجيا النووية</h1>
+    <div class="sub">رسم معرفي موجّه: كل سهم = «يجب إتقانه قبل»</div>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="ابحث: عمر النصف، k_eff، nuc.fission…" autocomplete="off">
+      <select id="domainFilter"><option value="">كل المجالات</option></select>
+      <select id="levelFilter"><option value="">كل المستويات (0–14)</option></select>
+      <button id="resetView">إعادة ضبط العرض</button>
+      <span id="stats" class="stats"></span>
+    </div>
+  </header>
+
+  <main>
+    <canvas id="graph"></canvas>
+    <aside id="panel">
+      <div id="panelBody" class="empty">
+        <p><strong>انقر أي عقدة</strong> لعرض تفاصيلها: الشروط المسبقة، ما تفتحه،
+        المفاهيم، المعادلات، التطبيقات، المصادر.</p>
+        <p>اسحب للتحريك · عجلة الفأرة للتكبير · انقر مرتين على العقدة لتوسيطها.</p>
+        <hr>
+        <h3>ألوان المجالات</h3>
+        <div id="legend" class="legend"></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    البيانات: <code>graph/knowledge_graph.json</code> (مولّد من <code>tools/kg/nodes_*.py</code>
+    عبر <code>python3 tools/build.py</code>) · ملف تقدّم المتعلّم:
+    <code>progress/profile.json</code>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
