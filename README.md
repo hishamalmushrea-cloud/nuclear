@@ -21,9 +21,19 @@
 MAP/         الوثائق التأليفية والمولّدة (الخريطة، المنهج، المسارات، المصادر، المشاريع…)
 graph/       knowledge_graph.json + edges.csv  (البيانات القابلة لإعادة الاستخدام)
 tools/kg/    العقد المعرفية (ملفات nodes_*.py) + المخطط + سجل المصادر
-tools/       build.py (بناء/تحقق/توليد) · progress.py (ملف التقدّم والتقييم)
+tools/       build.py (بناء/تحقق/توليد) · progress.py (تقدّم) · lesson.py (درس+اختبار)
+lessons/     الدروس الرسمية (لكل درس اختبار مدمج يُسجَّل تلقائياً)
+sims/        🔬 مختبرات افتراضية تفاعلية (بلا أي مصدر مشعّ حقيقي)
 progress/    ملف تقدّم المتعلّم + دفتر الباحث + تقارير الفجوات
 site/        عارض الويب التفاعلي للرسم
+```
+
+## 🔬 المختبرات الافتراضية والدروس
+
+```bash
+python3 -m sims                      # قائمة المختبرات (اضمحلال، غايغر، تدريع، حركية مفاعل)
+python3 tools/lesson.py list         # الدروس المتاحة
+python3 tools/lesson.py learn 000    # الدرس الأول: الشرح ثم الاختبار ثم التسجيل
 ```
 
 ## ⚙️ التشغيل
@@ -31,6 +41,7 @@ site/        عارض الويب التفاعلي للرسم
 ```bash
 python3 tools/build.py            # تحقّق + توليد graph/ و MAP/01..04 و site/graph_data.json
 python3 tools/build.py --check    # تحقّق فقط
+python3 tools/lesson.py learn 000    # الدرس الأول + اختبار + تسجيل تلقائي
 python3 tools/progress.py show    # حالة ملف التقدّم
 python3 tools/progress.py set nuc.fission L2 78   # تحديث إتقان موضوع
 python3 tools/progress.py report  # تقرير فجوات + الجاهزية للانتقال

@@ -33,6 +33,7 @@
 | 15 | [`15-agent-system.md`](15-agent-system.md) | يدوي | نظام تشغيل الوكيل متعدد التخصصات (X.1–X.34) |
 | 16 | [`16-zero-to-researcher.md`](16-zero-to-researcher.md) | يدوي | خطة من الصفر إلى الباحث (3 مسارات زمنية) |
 | 17 | [`17-expansion-log.md`](17-expansion-log.md) | يدوي | سجل توسّع الخريطة وقواعد الإضافة |
+| 18 | [`../lessons/000-where-do-we-start.md`](../lessons/000-where-do-we-start.md) | درس | **الدرس الأول**: ما هذا المجال؟ وكيف نقرأ أرقامه؟ (مع اختبار مدمج) |
 
 ## 3) محتويات أخرى
 
@@ -42,6 +43,9 @@
 - `tools/kg/schema.py` — المخطط + سجل المصادر + تصنيف المستويات.
 - `tools/kg/nodes_*.py` — بيانات المواضيع (11 ملفاً).
 - `progress/profile.json|md` — ملف تقدّم المتعلّم.
+- `lessons/` — الدروس الرسمية؛ كل درس يحوي كتلة `quiz` تُشغَّل بـ `tools/lesson.py`.
+- `sims/` — مختبرات افتراضية تفاعلية (`python3 -m sims`): اضمحلال، عدّاد غايغر،
+  تدريع وجرعة، حركية مفاعل. لا مصادر مشعّة حقيقية — محاكاة إحصائية فقط.
 - `progress/notebook-template.md` — دفتر الباحث (X.18).
 - `progress/gap-report-template.md` — تقرير الفجوات (X.20).
 

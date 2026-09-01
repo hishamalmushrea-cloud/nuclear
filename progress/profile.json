@@ -1,7 +1,7 @@
 {
   "learner": "المتعلّم (بانتظار اختبار تحديد المستوى)",
   "updated": "2026-09-01",
-  "notes": "لم يُجرَ اختبار تحديد المستوى بعد؛ كل القيم ابتدائية (0٪). نفّذ: python3 tools/progress.py quiz <id>",
+  "notes": "لم يُجرَ اختبار تحديد المستوى بعد. ابدأ: python3 tools/lesson.py learn 000",
   "topics": {
     "math.pre": {
       "level": "L0",
