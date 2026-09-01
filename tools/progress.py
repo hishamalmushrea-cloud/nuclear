@@ -102,7 +102,7 @@ def cmd_show(args):
     by_dom = {}
     for tid, v in topics.items():
         n = nodes.get(tid)
-        d = n["domain"] if n else "?"
+        d = n.domain if n else "?"
         by_dom.setdefault(d, []).append(v.get("mastery", 0))
     print("| المجال | عدد مسجّل | متوسط الإتقان |")
     print("|---|---|---|")
