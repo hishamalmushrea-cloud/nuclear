@@ -1,7 +1,7 @@
 {
   "learner": "المتعلّم (بانتظار اختبار تحديد المستوى)",
   "updated": "2026-09-01",
-  "notes": "لم يُجرَ اختبار تحديد المستوى بعد. ابدأ: python3 tools/lesson.py learn 000",
+  "notes": "لم يبدأ المتعلّم بعد. ابدأ: python3 tools/tutor.py",
   "topics": {
     "math.pre": {
       "level": "L0",

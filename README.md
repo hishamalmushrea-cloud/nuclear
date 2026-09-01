@@ -24,8 +24,17 @@ tools/kg/    العقد المعرفية (ملفات nodes_*.py) + المخطط 
 tools/       build.py (بناء/تحقق/توليد) · progress.py (تقدّم) · lesson.py (درس+اختبار)
 lessons/     الدروس الرسمية (لكل درس اختبار مدمج يُسجَّل تلقائياً)
 sims/        🔬 مختبرات افتراضية تفاعلية (بلا أي مصدر مشعّ حقيقي)
+BUILD/       🛠️ «كيف أصنع؟» — مشاريع حقيقية تبنيها بيدك (مع قواعد السلامة والقانون)
 progress/    ملف تقدّم المتعلّم + دفتر الباحث + تقارير الفجوات
 site/        عارض الويب التفاعلي للرسم
+```
+
+## 👨‍🏫 ابدأ التعلّم الآن (ثلاثة أوامر)
+
+```bash
+python3 tools/tutor.py          # الفريق يسألك: درس → اختبار → تصحيح → تسجيل → التالي
+python3 -m sims                 # المختبرات: اضمحلال · غايغر · تدريع · حركية مفاعل · طيف غاما
+open BUILD/README.md            # «كيف أصنع؟»: مشاريع حقيقية تبنيها بيدك
 ```
 
 ## 🔬 المختبرات الافتراضية والدروس
@@ -41,7 +50,8 @@ python3 tools/lesson.py learn 000    # الدرس الأول: الشرح ثم ا
 ```bash
 python3 tools/build.py            # تحقّق + توليد graph/ و MAP/01..04 و site/graph_data.json
 python3 tools/build.py --check    # تحقّق فقط
-python3 tools/lesson.py learn 000    # الدرس الأول + اختبار + تسجيل تلقائي
+python3 tools/tutor.py               # 👨‍🏫 المدرّس: يشرح ثم يسألك ثم يسجّل تقدّمك
+python3 tools/lesson.py learn 000    # درس محدد + اختبار + تسجيل تلقائي
 python3 tools/progress.py show    # حالة ملف التقدّم
 python3 tools/progress.py set nuc.fission L2 78   # تحديث إتقان موضوع
 python3 tools/progress.py report  # تقرير فجوات + الجاهزية للانتقال
