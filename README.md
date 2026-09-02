@@ -57,6 +57,7 @@ python3 tools/progress.py show    # حالة ملف التقدّم
 python3 tools/progress.py set nuc.fission L2 78   # تحديث إتقان موضوع
 python3 tools/progress.py report  # تقرير فجوات + الجاهزية للانتقال
 python3 -m http.server 8000       # المعاينة: index.html → site/index.html · docs.html · progress.html
+python3 tools/separation.py demo  # نظرية الفصل: SWU + الشلال المثالي + الحد الأدنى الديناميكي الحراري
 python3 tools/site_index.py       # إعادة بناء فهرس الوثائق site/docs_index.json (بعد إضافة ملف .md)
 ```
 

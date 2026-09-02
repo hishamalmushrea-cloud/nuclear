@@ -34,6 +34,7 @@
 | 16 | [`16-zero-to-researcher.md`](16-zero-to-researcher.md) | يدوي | خطة من الصفر إلى الباحث (3 مسارات زمنية) |
 | 17 | [`17-expansion-log.md`](17-expansion-log.md) | يدوي | سجل توسّع الخريطة وقواعد الإضافة |
 | 18 | [`18-open-boundaries.md`](18-open-boundaries.md) | يدوي | **سياسة الانفتاح**: كل شيء مفتوح افتراضاً + الحد الوحيد مُعدَّد حصراً (X.35) |
+| 19 | [`19-separation-and-criticality.md`](19-separation-and-criticality.md) | يدوي | **نظرية الفصل وسلامة الحرجة**: اشتقاق V(x) وSWU والشلال المثالي والحد الأدنى الترموديناميكي + مبحث سلامة الحرجة (SSG-27، الطوارئ المزدوجة، الحدود الستة) |
 | 19 | [`../lessons/000-where-do-we-start.md`](../lessons/000-where-do-we-start.md) | درس | **الدرس الأول**: ما هذا المجال؟ وكيف نقرأ أرقامه؟ (مع اختبار مدمج) |
 
 ## 3) محتويات أخرى
@@ -53,6 +54,7 @@
 - `site/docs.html` — **عارض الوثائق**: كل ملفات `.md` في المستودع تُعرض مُنسّقة في
   المتصفح (فهرسها: `site/docs_index.json`، يُبنى بـ `python3 tools/site_index.py`).
 - `site/progress.html` — لوحة تقدّم المتعلّم (نسبة الإتقان، L0–L5، الساعات المتقنة).
+- `tools/separation.py` — حاسبة نظرية الفصل (SWU، الشلال المثالي، الحد الأدنى).
 - `progress/notebook-template.md` — دفتر الباحث (X.18).
 - `progress/gap-report-template.md` — تقرير الفجوات (X.20).
 

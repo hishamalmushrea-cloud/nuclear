@@ -1,6 +1,6 @@
 {
  "generated": true,
- "count": 33,
+ "count": 34,
  "groups": [
   {
    "key": "MAP",
@@ -11,7 +11,7 @@
      "path": "MAP/00-index.md",
      "title": "MAP/00 — الفهرس الشامل وطريقة استخدام النظام",
      "group": "MAP",
-     "size": 8493
+     "size": 8972
     },
     {
      "path": "MAP/01-grand-tree.md",
@@ -120,6 +120,12 @@
      "title": "MAP/18 — سياسة الانفتاح: «كل شيء مفتوح» … وما هو الحد الوحيد؟",
      "group": "MAP",
      "size": 12134
+    },
+    {
+     "path": "MAP/19-separation-and-criticality.md",
+     "title": "MAP/19 — نظرية الفصل وسلامة الحرجة: أقصى عمق مفتوح عند الحد",
+     "group": "MAP",
+     "size": 16694
     }
    ]
   },
@@ -238,7 +244,7 @@
      "path": "README.md",
      "title": "🧭 nuclear — الخريطة الكبرى للعلوم والتكنولوجيا النووية",
      "group": "",
-     "size": 5587
+     "size": 5740
     }
    ]
   }
