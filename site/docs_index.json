@@ -1,6 +1,6 @@
 {
  "generated": true,
- "count": 32,
+ "count": 33,
  "groups": [
   {
    "key": "MAP",
@@ -11,7 +11,7 @@
      "path": "MAP/00-index.md",
      "title": "MAP/00 — الفهرس الشامل وطريقة استخدام النظام",
      "group": "MAP",
-     "size": 8292
+     "size": 8493
     },
     {
      "path": "MAP/01-grand-tree.md",
@@ -101,7 +101,7 @@
      "path": "MAP/15-agent-system.md",
      "title": "MAP/15 — نظام تشغيل الوكيل متعدد التخصصات (X.1 → X.34)",
      "group": "MAP",
-     "size": 14286
+     "size": 14778
     },
     {
      "path": "MAP/16-zero-to-researcher.md",
@@ -114,6 +114,12 @@
      "title": "MAP/17 — سجل توسّع الخريطة (نظام حيّ)",
      "group": "MAP",
      "size": 3633
+    },
+    {
+     "path": "MAP/18-open-boundaries.md",
+     "title": "MAP/18 — سياسة الانفتاح: «كل شيء مفتوح» … وما هو الحد الوحيد؟",
+     "group": "MAP",
+     "size": 12134
     }
    ]
   },
@@ -151,7 +157,7 @@
      "path": "sims/README.md",
      "title": "🔬 المختبرات الافتراضية (`sims/`)",
      "group": "sims",
-     "size": 2763
+     "size": 2919
     }
    ]
   },

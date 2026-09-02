@@ -33,7 +33,8 @@
 | 15 | [`15-agent-system.md`](15-agent-system.md) | يدوي | نظام تشغيل الوكيل متعدد التخصصات (X.1–X.34) |
 | 16 | [`16-zero-to-researcher.md`](16-zero-to-researcher.md) | يدوي | خطة من الصفر إلى الباحث (3 مسارات زمنية) |
 | 17 | [`17-expansion-log.md`](17-expansion-log.md) | يدوي | سجل توسّع الخريطة وقواعد الإضافة |
-| 18 | [`../lessons/000-where-do-we-start.md`](../lessons/000-where-do-we-start.md) | درس | **الدرس الأول**: ما هذا المجال؟ وكيف نقرأ أرقامه؟ (مع اختبار مدمج) |
+| 18 | [`18-open-boundaries.md`](18-open-boundaries.md) | يدوي | **سياسة الانفتاح**: كل شيء مفتوح افتراضاً + الحد الوحيد مُعدَّد حصراً (X.35) |
+| 19 | [`../lessons/000-where-do-we-start.md`](../lessons/000-where-do-we-start.md) | درس | **الدرس الأول**: ما هذا المجال؟ وكيف نقرأ أرقامه؟ (مع اختبار مدمج) |
 
 ## 3) محتويات أخرى
 
