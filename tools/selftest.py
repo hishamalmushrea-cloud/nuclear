@@ -174,6 +174,65 @@ def t_separation():
                                    f"{'نعم' if ok2 else 'لا'} · SWU={swu:.3f}")
 
 
+# --------------------------------------------------- 5ب) مولّد الدروس
+def t_generator():
+    sys.path.insert(0, os.path.join(ROOT, "tools"))
+    import gen_lesson as G  # noqa: E402
+    nodes = G.registry()
+    dep = G.deps_map(nodes)
+    a, _ = G.build_lesson("math.stat", nodes, {"topics": {}}, dep=dep)
+    b, _ = G.build_lesson("math.stat", nodes, {"topics": {}}, dep=dep)
+    if a != b:
+        return False, "التوليد غير حتمي"
+    problems = []
+    import lesson as L  # noqa: E402
+    for f in sorted(os.listdir(os.path.join(ROOT, "lessons"))):
+        if not f.endswith(".md"):
+            continue
+        try:
+            meta, body, quiz = L.parse(os.path.join(ROOT, "lessons", f))
+        except Exception as exc:  # noqa: BLE001
+            problems.append(f"{f}: {exc}")
+            continue
+        if not meta.get("id"):
+            problems.append(f"{f}: بلا معرّف")
+        if len(quiz) < 3:
+            problems.append(f"{f}: {len(quiz)} أسئلة")
+        seen = set()
+        for i, q in enumerate(quiz):
+            if q.get("a") not in (0, 1, 2, 3):
+                problems.append(f"{f}#{i}: مفتاح إجابة غير صالح")
+            if len(set(q.get("o", []))) != len(q.get("o", [])):
+                problems.append(f"{f}#{i}: خيارات مكرّرة")
+            if q.get("q") in seen:
+                problems.append(f"{f}#{i}: سؤال مكرّر")
+            seen.add(q.get("q"))
+    return (not problems), "; ".join(problems[:4]) if problems else "التوليد حتمي وكل الدروس صالحة"
+
+
+# --------------------------------------------------- 5ج) التكرار المتباعد
+def t_sm2():
+    sys.path.insert(0, os.path.join(ROOT, "tools"))
+    from progress import sm2, due_list  # noqa: E402
+    t = {"mastery": 70}
+    seq = []
+    for q, day in ((4, "2026-09-02"), (5, "2026-09-03"), (5, "2026-09-09")):
+        sm2(t, q, day)
+        seq.append(t["interval"])
+    if seq != [1.0, 6.0, 15.6]:
+        return False, f"تسلسل الفواصل خاطئ: {seq}"
+    before = t["mastery"]
+    sm2(t, 1, "2026-09-21")           # فشل ⇒ إعادة + تراجع
+    if t["reps"] != 0 or t["interval"] != 1.0 or t["mastery"] >= before:
+        return False, "الفشل لا يعيد الجدولة ولا يخفض الإتقان"
+    d = due_list({"topics": {"a": {"mastery": 50, "due": "2026-09-01"},
+                             "b": {"mastery": 30},
+                             "c": {"mastery": 0, "due": "2026-01-01"}}}, {}, "2026-09-07")
+    if [x[0] for x in d] != ["b", "a"]:
+        return False, "قائمة الاستحقاق خاطئة"
+    return True, f"فواصل SM-2: 1 → 6 → 15.6 يوم · الفشل يعيد الجدولة · الاستحقاق صحيح"
+
+
 # --------------------------------------------------- 6) ملف التقدّم
 def t_profile():
     from kg.schema import registry  # noqa: E402
@@ -210,6 +269,8 @@ def main() -> int:
     check("سلامة الدروس والاختبارات", t_lessons)
     check("فيزياء المختبر 06 (عددي = تحليلي)", t_diffusion_real)
     check("رياضيات الفصل (V'' و SWU)", t_separation)
+    check("مولّد الدروس (حتمي + دروس صالحة)", t_generator)
+    check("التكرار المتباعد (SM-2)", t_sm2)
     check("ملف التقدّم مطابق للرسم", t_profile)
     check("أدوات سطر الأوامر", t_cli)
 

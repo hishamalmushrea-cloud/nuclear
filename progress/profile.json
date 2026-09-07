@@ -1,6 +1,6 @@
 {
   "learner": "المتعلّم",
-  "updated": "2026-09-02",
+  "updated": "2026-09-07",
   "notes": "لم يبدأ الاختبار بعد. ابدأ: python3 tools/tutor.py — ثم راجع MAP/00 و MAP/18 و MAP/19.",
   "topics": {
     "math.pre": {

@@ -10,6 +10,8 @@
     python3 tools/progress.py quiz   <node-id>           # اختبار قصير (أسئلة نصية)
     python3 tools/progress.py report                     # تقرير فجوات + الجاهزية
     python3 tools/progress.py next                       # أفضل المواضيع التالية
+    python3 tools/progress.py due                        # المستحق للمراجعة اليوم (X.19)
+    python3 tools/progress.py review                     # جلسة مراجعة متباعدة (SM-2)
 """
 from __future__ import annotations
 
@@ -72,6 +74,158 @@ def write_md(p):
     lines.append("")
     with open(PROFILE_MD, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
+
+
+# ------------------------------------------------- التكرار المتباعد (X.19) -----
+def level_of(m):
+    """تحويل نسبة الإتقان إلى مستوى L0..L5."""
+    if m >= 92:
+        return "L5"
+    if m >= 80:
+        return "L4"
+    if m >= 65:
+        return "L3"
+    if m >= 45:
+        return "L2"
+    if m >= 25:
+        return "L1"
+    return "L0"
+
+
+def sm2(topic: dict, q: int, today: str) -> dict:
+    """خوارزمية SM-2 (SuperMemo 2) متباعدة الفواصل.
+
+    q = جودة الاستذكار 0..5:
+      5 استجابة مثالية · 4 صحيح بتردّد · 3 صحيح بصعوبة
+      2 خطأ لكن تذكّرته بعد الإجابة · 1 خطأ وتذكّرت الإجابة · 0 نسيان تام
+    """
+    import datetime as _dt
+
+    q = max(0, min(5, int(q)))
+    ef = float(topic.get("ef", 2.5))
+    reps = int(topic.get("reps", 0))
+    iv = float(topic.get("interval", 0) or 0)
+
+    if q < 3:
+        reps, iv = 0, 1.0
+    else:
+        reps += 1
+        iv = 1.0 if reps == 1 else (6.0 if reps == 2 else max(1.0, iv * ef))
+
+    ef = ef + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02))
+    ef = max(1.3, min(3.0, ef))
+
+    m = int(topic.get("mastery", 0) or 0)
+    if q >= 4:
+        m = min(100, m + 5)
+    elif q == 3:
+        m = min(100, m + 2)
+    else:
+        m = max(0, m - 8)
+
+    topic["ef"] = round(ef, 3)
+    topic["reps"] = reps
+    topic["interval"] = round(iv, 2)
+    topic["last_review"] = today
+    topic["due"] = (_dt.date.fromisoformat(today) + _dt.timedelta(days=iv)).isoformat()
+    topic["mastery"] = m
+    topic["status"] = status_of(m)
+    topic["level"] = level_of(m)
+    return topic
+
+
+def due_list(p, nodes, today, limit=20):
+    """المواضيع المستحقة للمراجعة اليوم: المستحقة + التي بدأت ولم تُجدول."""
+    items = []
+    for nid, t in p.get("topics", {}).items():
+        m = t.get("mastery", 0) or 0
+        if m <= 0:
+            continue
+        due = t.get("due")
+        if due is None:                       # بدأ ولم يُجدول بعد ⇒ يستحق الآن
+            items.append((nid, t, True))
+        elif due <= today:
+            items.append((nid, t, False))
+    items.sort(key=lambda x: (x[2] is False, x[1].get("mastery", 0)))
+    return items[:limit]
+
+
+def cmd_due(args):
+    p = load_profile()
+    nodes = registry()
+    items = due_list(p, nodes, args.today)
+    print(f"\n=== مستحق للمراجعة ({args.today}) ===")
+    if not items:
+        print("  لا شيء مستحق. (ابدأ موضوعاً جديداً: python3 tools/progress.py next)")
+        return
+    print("  #  الموضوع                                   الإتقان  الفاصل  الاستحقاق")
+    print("  ─────────────────────────────────────────────────────────────────────")
+    for i, (nid, t, newbie) in enumerate(items, 1):
+        n = nodes.get(nid)
+        name = (n.ar if n else nid)[:36]
+        print(f"  {i:2d} {name:<38} {t.get('mastery',0):>5}٪  "
+              f"{t.get('interval','—'):>6}  {t.get('due','الآن') if not newbie else 'غير مُجدول'}")
+    print(f"\n  شغّل: python3 tools/progress.py review")
+
+
+def cmd_review(args):
+    """جلسة مراجعة متباعدة: استذكار نشط ثم تقييم ذاتي 0..5."""
+    import datetime as _dt
+
+    p = load_profile()
+    nodes = registry()
+    items = due_list(p, nodes, args.today, limit=args.limit)
+    if not items:
+        print("لا شيء مستحق للمراجعة اليوم.")
+        return
+
+    print("\n=== جلسة مراجعة متباعدة (X.19) ===")
+    print("القاعدة: **استذكر قبل أن تكشف الإجابة** — القيمة كلها في المحاولة، لا في الجواب.\n")
+    done = 0
+    for nid, t, _ in items:
+        n = nodes.get(nid)
+        name = n.ar if n else nid
+        print("─" * 64)
+        print(f"📘 {name}  (`{nid}`)")
+        print(f"   إتقانك الآن: {t.get('mastery',0)}٪ · مراجعات سابقة: {t.get('reps',0)} · "
+              f"الفاصل: {t.get('interval','—')} يوم")
+        if n and n.concepts:
+            print(f"   المفاهيم المطلوبة ({len(n.concepts)}):")
+        try:
+            input("   ✍️  اذكر ما تتذكره الآن (بصوت أو كتابة)، ثم اضغط Enter للكشف… ")
+        except (EOFError, KeyboardInterrupt):
+            print()
+            break
+        if n and n.concepts:
+            for c in n.concepts:
+                print(f"      • {c}")
+        if n and n.eqs:
+            print("   المعادلات:")
+            for e in n.eqs[:4]:
+                print(f"      › {e}")
+        if n and n.prereqs:
+            pre = ", ".join(f"{(nodes[q].ar if q in nodes else q)}" for q in n.prereqs[:4])
+            print(f"   يفترض: {pre}")
+        try:
+            q = input("؟ قيّم استذكارك من 0 (نسيت تماماً) إلى 5 (مثالي): ").strip()
+        except (EOFError, KeyboardInterrupt):
+            print()
+            break
+        if q == "" or not q.isdigit():
+            print("   (تخطّي)")
+            continue
+        t2 = sm2(p["topics"][nid], int(q), args.today)
+        p["topics"][nid] = t2
+        done += 1
+        print(f"   → الفاصل القادم: {t2['interval']} يوم · الاستحقاق: {t2['due']} · "
+              f"الإتقان: {t2['mastery']}٪ ({t2['status']})")
+        if args.limit and done >= args.limit:
+            break
+
+    if done:
+        p["updated"] = args.today
+        save_profile(p)
+        print(f"\n✅ رُوجعت {done} موضوعاً · حدّث ملف التقدّم.")
 
 
 # ---------------------------------------------------------------- أوامر -----
@@ -235,6 +389,13 @@ def main():
     s = sub.add_parser("quiz", parents=[common])
     s.add_argument("node")
     s.set_defaults(func=cmd_quiz)
+
+    s = sub.add_parser("due", parents=[common], help="المستحق للمراجعة اليوم")
+    s.set_defaults(func=cmd_due)
+
+    s = sub.add_parser("review", parents=[common], help="جلسة مراجعة متباعدة (SM-2)")
+    s.add_argument("--limit", type=int, default=10)
+    s.set_defaults(func=cmd_review)
 
     args = ap.parse_args()
     args.func(args)

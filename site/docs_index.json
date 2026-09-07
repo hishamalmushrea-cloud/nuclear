@@ -1,6 +1,6 @@
 {
  "generated": true,
- "count": 34,
+ "count": 40,
  "groups": [
   {
    "key": "MAP",
@@ -11,7 +11,7 @@
      "path": "MAP/00-index.md",
      "title": "MAP/00 — الفهرس الشامل وطريقة استخدام النظام",
      "group": "MAP",
-     "size": 8972
+     "size": 9447
     },
     {
      "path": "MAP/01-grand-tree.md",
@@ -101,7 +101,7 @@
      "path": "MAP/15-agent-system.md",
      "title": "MAP/15 — نظام تشغيل الوكيل متعدد التخصصات (X.1 → X.34)",
      "group": "MAP",
-     "size": 14778
+     "size": 15245
     },
     {
      "path": "MAP/16-zero-to-researcher.md",
@@ -113,7 +113,7 @@
      "path": "MAP/17-expansion-log.md",
      "title": "MAP/17 — سجل توسّع الخريطة (نظام حيّ)",
      "group": "MAP",
-     "size": 5476
+     "size": 7279
     },
     {
      "path": "MAP/18-open-boundaries.md",
@@ -151,6 +151,42 @@
      "title": "الوحدة 1.2 — الجبر: إعادة ترتيب المعادلات",
      "group": "lessons",
      "size": 7479
+    },
+    {
+     "path": "lessons/003-math-geometry.md",
+     "title": "الهندسة",
+     "group": "lessons",
+     "size": 7542
+    },
+    {
+     "path": "lessons/004-math-trig.md",
+     "title": "المثلثات",
+     "group": "lessons",
+     "size": 7672
+    },
+    {
+     "path": "lessons/005-math-calc1.md",
+     "title": "التفاضل",
+     "group": "lessons",
+     "size": 7818
+    },
+    {
+     "path": "lessons/006-math-calc2.md",
+     "title": "التكامل",
+     "group": "lessons",
+     "size": 8407
+    },
+    {
+     "path": "lessons/007-math-prob.md",
+     "title": "الاحتمالات",
+     "group": "lessons",
+     "size": 8303
+    },
+    {
+     "path": "lessons/008-math-stat.md",
+     "title": "الإحصاء",
+     "group": "lessons",
+     "size": 8219
     }
    ]
   },
@@ -231,7 +267,7 @@
      "path": "progress/profile.md",
      "title": "ملف تقدّم المتعلّم (X.8)",
      "group": "progress",
-     "size": 34491
+     "size": 34483
     }
    ]
   },
@@ -244,7 +280,7 @@
      "path": "README.md",
      "title": "🧭 nuclear — الخريطة الكبرى للعلوم والتكنولوجيا النووية",
      "group": "",
-     "size": 5870
+     "size": 6278
     }
    ]
   }
