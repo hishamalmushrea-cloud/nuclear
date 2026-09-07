@@ -233,6 +233,33 @@ def t_sm2():
     return True, f"فواصل SM-2: 1 → 6 → 15.6 يوم · الفشل يعيد الجدولة · الاستحقاق صحيح"
 
 
+# --------------------------------------------------- 5د) بوابات X.9
+def t_gates():
+    sys.path.insert(0, os.path.join(ROOT, "tools"))
+    from progress import stage_stats, gate_pass, GATE  # noqa: E402
+    from kg.schema import registry  # noqa: E402
+    nodes = registry()
+    prof = {"topics": {}}
+    for n in nodes.values():
+        if n.stage <= 1:
+            prof["topics"][n.id] = {"mastery": 90, "attempts": [88, 92],
+                                    "dim": {"concept": 95, "term": 90, "calc": 85}}
+    st = stage_stats(prof, nodes, 1)
+    if st is None:
+        return False, "لا عُقد في المرحلة 1"
+    if not gate_pass(st):
+        return False, f"بوابة لم تُجتز رغم اكتمال الأبعاد: مفاهيم {st['concepts']:.0f} مصطلحات {st['terms']:.0f}"
+    # إنقاص بُعد واحد يجب أن يُسقط البوابة
+    for t in prof["topics"].values():
+        t["dim"]["term"] = 50
+    st2 = stage_stats(prof, nodes, 1)
+    if gate_pass(st2):
+        return False, "البوابة تجتاز رغم المصطلحات 50٪"
+    if GATE != {"concepts": 80, "marks": 70, "terms": 80, "cumulative": 75}:
+        return False, f"عتبات البوابة تغيّرت: {GATE}"
+    return True, f"العتبات 80/70/80/75 محفوظة · اجتياز كامل ✅ · سقوط عند مصطلحات 50٪ ❌"
+
+
 # --------------------------------------------------- 6) ملف التقدّم
 def t_profile():
     from kg.schema import registry  # noqa: E402
@@ -251,7 +278,8 @@ def t_profile():
 # --------------------------------------------------- 7) واجهات الأوامر
 def t_cli():
     tools = ["tools/build.py", "tools/progress.py", "tools/lesson.py",
-             "tools/tutor.py", "tools/separation.py", "tools/site_index.py"]
+             "tools/tutor.py", "tools/separation.py", "tools/site_index.py",
+             "tools/gen_lesson.py", "tools/selftest.py"]
     bad = []
     for t in tools:
         r = run([sys.executable, t, "--help"])
@@ -261,6 +289,12 @@ def t_cli():
 
 
 def main() -> int:
+    import argparse as _ap
+    parser = _ap.ArgumentParser(description="فحص ذاتي للنظام النووي المعرفي")
+    parser.add_argument("-v", "--verbose", action="store_true", help="تفصيل إضافي")
+    parser.add_argument("--quick", action="store_true", help="تخطّي الفحوصات البطيئة")
+    parser.parse_args()
+
     print("\n🧪 فحص ذاتي للنظام النووي المعرفي")
     print("─" * 60)
     check("الرسم المعرفي (build --check)", t_graph)
@@ -271,6 +305,7 @@ def main() -> int:
     check("رياضيات الفصل (V'' و SWU)", t_separation)
     check("مولّد الدروس (حتمي + دروس صالحة)", t_generator)
     check("التكرار المتباعد (SM-2)", t_sm2)
+    check("بوابات الانتقال X.9", t_gates)
     check("ملف التقدّم مطابق للرسم", t_profile)
     check("أدوات سطر الأوامر", t_cli)
 

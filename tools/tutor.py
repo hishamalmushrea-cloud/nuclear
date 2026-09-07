@@ -136,12 +136,12 @@ def ask_question(q, i, lesson_body, p, log):
             raw = input("   › ").strip()
         except (EOFError, KeyboardInterrupt):
             print()
-            return "stop", False
+            return "stop", False, None
         if raw in ("توقف", "quit", "exit"):
-            return "stop", False
+            return "stop", False, None
         if raw in ("تخطي", "skip"):
             print(f"   ⏭  تجاوزنا. الجواب الصحيح: {opts[q['a']]}")
-            return "next", False
+            return "next", False, (q.get("k") or "concept")
         if raw in COMMANDS and raw not in ("تخطي", "توقف"):
             if raw == "سؤال":
                 free = input("   ✍ اكتب سؤالك: ").strip()
@@ -162,7 +162,7 @@ def ask_question(q, i, lesson_body, p, log):
         print("   ✅ صحيح.")
         if q.get("why"):
             print(f"   💡 {q['why']}")
-        return "next", True
+        return "next", True, (q.get("k") or "concept")
     print(f"   ❌ ليس تماماً. الصحيح: {opts[q['a']]}")
     if q.get("why"):
         print(f"   💡 {q['why']}")
@@ -171,10 +171,10 @@ def ask_question(q, i, lesson_body, p, log):
         nxt = input("   › ").strip()
     except (EOFError, KeyboardInterrupt):
         print()
-        return "next", False
+        return "next", False, (q.get("k") or "concept")
     if nxt in COMMANDS and nxt not in ("تخطي", "توقف", "؟"):
         explain(nxt, q, lesson_body)
-    return "next", False
+    return "next", False, (q.get("k") or "concept")
 
 
 # ------------------------------------------------------------- الجلسة ------
@@ -195,8 +195,9 @@ def run_lesson(lid, f, meta, body, quiz, p):
     log = []
     score = 0
     answered = 0
+    per_kind = {}          # {نوع السؤال: [صحيح، مجموع]} — يغذّي بوابات X.9
     for i, q in enumerate(quiz, 1):
-        state, ok = ask_question(q, i, body, p, log)
+        state, ok, kind = ask_question(q, i, body, p, log)
         if state == "stop":
             print("\n  (تم إنهاء الجلسة — لم تُحتسب النتيجة)")
             flush_log(lid, log, None)
@@ -204,8 +205,16 @@ def run_lesson(lid, f, meta, body, quiz, p):
         if state == "next":
             answered += 1
             score += 1 if ok else 0
+            if kind:
+                k_ok, k_tot = per_kind.get(kind, [0, 0])
+                per_kind[kind] = [k_ok + (1 if ok else 0), k_tot + 1]
 
     pct = round(100.0 * score / max(1, len(quiz)))
+    kinds = {k: round(100.0 * ok / tot) for k, (ok, tot) in per_kind.items()}
+    if len(kinds) > 1:
+        NAMES = {"concept": "المفاهيم", "term": "المصطلحات", "calc": "الحساب"}
+        print("  📊 حسب النوع: " + " · ".join(
+            f"{NAMES.get(k, k)} {v}٪" for k, v in sorted(kinds.items())))
     print("\n" + "═" * 68)
     print(f"  النتيجة: {score}/{len(quiz)} = {pct}٪")
     if pct >= PASS:
@@ -226,8 +235,18 @@ def run_lesson(lid, f, meta, body, quiz, p):
             new = max(prev, min(85, pct))
         else:
             new = max(prev, min(45, pct))
-        p.setdefault("topics", {})[nid] = {"level": "L2" if new >= 75 else "L1",
-                                           "mastery": new, "status": status_of(new)}
+        t = p.setdefault("topics", {}).get(nid, {}) or {}
+        t.update({"level": "L2" if new >= 75 else "L1",
+                  "mastery": new, "status": status_of(new)})
+        t["attempts"] = list(t.get("attempts", []))[-4:] + [int(pct)]
+        t["best_quiz"] = max(int(pct), int(t.get("best_quiz", 0) or 0))
+        t["last_quiz"] = datetime.date.today().isoformat()
+        dim = dict(t.get("dim", {}) or {})
+        for k, v in kinds.items():
+            dim[k] = int(round(max(float(dim.get(k, 0)), float(v))))
+        if dim:
+            t["dim"] = dim
+        p.setdefault("topics", {})[nid] = t
     p["updated"] = datetime.date.today().isoformat()
     save_profile(p)
     if node_ids:

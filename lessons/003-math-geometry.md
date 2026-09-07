@@ -105,6 +105,7 @@ generated: true
   ],
   "a": 2,
   "why": "من قائمة مفاهيم العقدة `math.geometry`: الهندسة الإقليدية",
+  "k": "concept",
   "alt": {
    "simple": "الموضوع يتمحور حول: الهندسة الإقليدية"
   }
@@ -119,6 +120,7 @@ generated: true
   ],
   "a": 0,
   "why": "هذه إحدى معادلات `math.geometry`؛ راجع قسم «المعادلات الأساسية» في الدرس.",
+  "k": "calc",
   "alt": {
    "simple": "احفظ معادلة واحدة محورية لكل موضوع، واشتقّ الباقي منها."
   }
@@ -133,6 +135,7 @@ generated: true
   ],
   "a": 3,
   "why": "`math.pre` مدرج في شروط `math.geometry` في الرسم المعرفي.",
+  "k": "concept",
   "alt": {
    "simple": "الشرط المسبق هو ما تفترضه معلومةً قبل أن تبدأ."
   }
@@ -147,6 +150,7 @@ generated: true
   ],
   "a": 0,
   "why": "`math.trig` يعتمد على `math.geometry` في الرسم المعرفي.",
+  "k": "concept",
   "alt": {
    "simple": "كل موضوع يفتح أبواباً؛ اعرف أين يوصلك قبل أن تدرسه."
   }
@@ -161,8 +165,24 @@ generated: true
   ],
   "a": 0,
   "why": "من تطبيقات `math.geometry`: هندسة التدريع",
+  "k": "concept",
   "alt": {
    "simple": "التطبيق هو ما يجعل الموضوع يستحق الوقت."
+  }
+ },
+ {
+  "q": "ما المقابل الإنجليزي لمصطلح «الهندسة»؟",
+  "o": [
+   "Nuclear well logging",
+   "Geometry",
+   "Analytical chemistry",
+   "Nuclear fission"
+  ],
+  "a": 1,
+  "why": "`math.geometry` = الهندسة / Geometry",
+  "k": "term",
+  "alt": {
+   "simple": "المصطلحات الإنجليزية ضرورية: 95٪ من الأدبيات بهذه اللغة."
   }
  }
 ]

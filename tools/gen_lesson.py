@@ -147,7 +147,7 @@ def pick_others(nodes, node, pool_attr, k, rng):
     return out
 
 
-def make_mcq(rng, q, correct, distractors, why, simple=None):
+def make_mcq(rng, q, correct, distractors, why, simple=None, kind="concept"):
     opts = [correct] + list(distractors)
     # أزل التكرار
     clean, seen = [], set()
@@ -161,7 +161,7 @@ def make_mcq(rng, q, correct, distractors, why, simple=None):
     rng.shuffle(idx)
     shuffled = [clean[i] for i in idx]
     ans = shuffled.index(correct)
-    item = {"q": q, "o": shuffled, "a": ans, "why": why}
+    item = {"q": q, "o": shuffled, "a": ans, "why": why, "k": kind}
     if simple:
         item["alt"] = {"simple": simple}
     return item
@@ -183,7 +183,7 @@ def build_quiz(node, nodes, rng, dep=None):
             rng, f"أيّ مما يلي يُعدّ من مفاهيم «{node.ar}»؟",
             c, pick_others(nodes, node, "concepts", 3, rng),
             why=f"من قائمة مفاهيم العقدة `{node.id}`: {c}",
-            simple=f"الموضوع يتمحور حول: {c}"))
+            simple=f"الموضوع يتمحور حول: {c}", kind="concept"))
 
     if eqs:
         e = eqs[rng.randrange(len(eqs))]
@@ -191,7 +191,7 @@ def build_quiz(node, nodes, rng, dep=None):
             rng, f"أيّ معادلة تنتمي إلى «{node.ar}»؟",
             e, pick_others(nodes, node, "eqs", 3, rng),
             why=f"هذه إحدى معادلات `{node.id}`؛ راجع قسم «المعادلات الأساسية» في الدرس.",
-            simple="احفظ معادلة واحدة محورية لكل موضوع، واشتقّ الباقي منها."))
+            simple="احفظ معادلة واحدة محورية لكل موضوع، واشتقّ الباقي منها.", kind="calc"))
 
     if pres:
         p = pres[rng.randrange(len(pres))]
@@ -200,7 +200,7 @@ def build_quiz(node, nodes, rng, dep=None):
             f"{nodes[p].ar} (`{p}`)",
             [f"{nodes[o].ar} (`{o}`)" for o in _unrelated(nodes, node, 3, rng, dep)],
             why=f"`{p}` مدرج في شروط `{node.id}` في الرسم المعرفي.",
-            simple="الشرط المسبق هو ما تفترضه معلومةً قبل أن تبدأ."))
+            simple="الشرط المسبق هو ما تفترضه معلومةً قبل أن تبدأ.", kind="concept"))
 
     if deps:
         d = deps[rng.randrange(len(deps))]
@@ -209,7 +209,7 @@ def build_quiz(node, nodes, rng, dep=None):
             f"{nodes[d].ar} (`{d}`)",
             [f"{nodes[o].ar} (`{o}`)" for o in _unrelated(nodes, node, 3, rng, dep)],
             why=f"`{d}` يعتمد على `{node.id}` في الرسم المعرفي.",
-            simple="كل موضوع يفتح أبواباً؛ اعرف أين يوصلك قبل أن تدرسه."))
+            simple="كل موضوع يفتح أبواباً؛ اعرف أين يوصلك قبل أن تدرسه.", kind="concept"))
 
     if apps:
         a = apps[rng.randrange(len(apps))]
@@ -217,7 +217,19 @@ def build_quiz(node, nodes, rng, dep=None):
             rng, f"أيّ تطبيق عملي ينتمي إلى «{node.ar}»؟",
             a, pick_others(nodes, node, "apps", 3, rng),
             why=f"من تطبيقات `{node.id}`: {a}",
-            simple="التطبيق هو ما يجعل الموضوع يستحق الوقت."))
+            simple="التطبيق هو ما يجعل الموضوع يستحق الوقت.", kind="concept"))
+
+    # سؤال مصطلحات (ثنائي اللغة) — يغذّي بُعد «المصطلحات» في بوابات X.9
+    others = [n for n in nodes.values() if n.id != node.id and n.en and n.en != node.en]
+    if others and node.en:
+        rng.shuffle(others)
+        qs.append(make_mcq(
+            rng, f"ما المقابل الإنجليزي لمصطلح «{node.ar}»؟",
+            node.en,
+            [o.en for o in others[:3]],
+            why=f"`{node.id}` = {node.ar} / {node.en}",
+            simple="المصطلحات الإنجليزية ضرورية: 95٪ من الأدبيات بهذه اللغة.",
+            kind="term"))
     return qs
 
 
@@ -374,6 +386,7 @@ def main() -> int:
     g.add_argument("--all", action="store_true", help="كل العُقد بلا دروس")
     g.add_argument("--limit", type=int, default=1)
     g.add_argument("--dry-run", action="store_true", help="اعرض دون كتابة")
+    g.add_argument("--force", action="store_true", help="أعد توليد درس مولّد سابق في مكانه")
 
     p = sub.add_parser("preview", help="عرض درس دون كتابة ملف")
     p.add_argument("node")
@@ -416,7 +429,13 @@ def main() -> int:
 
     written = []
     for nid in targets:
-        lid, body = build_lesson(nid, nodes, prof, dep=dep)
+        prev = covered.get(nid)
+        lid = None
+        if prev and getattr(args, "force", False):
+            m = re.match(r"(\d{3})-", prev)
+            if m:
+                lid = m.group(1)
+        lid, body = build_lesson(nid, nodes, prof, lid=lid, dep=dep)
         fname = f"{lid}-{slugify(nid.replace('.', '-'))}.md"
         path = os.path.join(LESSONS, fname)
         if args.cmd == "preview" or getattr(args, "dry_run", False):

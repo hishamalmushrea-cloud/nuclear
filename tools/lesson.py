@@ -67,6 +67,7 @@ def run_quiz(meta, quiz):
     print(f"  اختبار: {meta.get('title', '')}")
     print("═" * 64)
     score = 0
+    per_kind = {}          # {نوع السؤال: [صحيح، مجموع]}
     for i, q in enumerate(quiz, 1):
         print(f"\nس{i}. {q['q']}")
         for j, o in enumerate(q["o"], 1):
@@ -77,14 +78,24 @@ def run_quiz(meta, quiz):
                 ans = int(raw) - 1
                 break
             print("   أدخل رقماً من الخيارات.")
+        kind = q.get("k") or "concept"
+        ok, tot = per_kind.get(kind, [0, 0])
+        tot += 1
         if ans == q["a"]:
             print("   ✅ صحيح.")
             score += 1
+            ok += 1
         else:
             print(f"   ❌ غير صحيح. الصحيح: {q['o'][q['a']]}")
+        per_kind[kind] = [ok, tot]
         if q.get("why"):
             print(f"   💡 {q['why']}")
     pct = round(100.0 * score / len(quiz))
+    kinds = {k: round(100.0 * ok / tot) for k, (ok, tot) in per_kind.items()}
+    if len(kinds) > 1:
+        print("  📊 حسب النوع: " + " · ".join(
+            f"{NAMES.get(k, k)} {v}٪" for k, v in sorted(kinds.items())))
+    return pct, kinds
     print("\n" + "─" * 64)
     print(f"  النتيجة: {score}/{len(quiz)} = {pct}٪")
     if pct >= 80:
@@ -93,10 +104,17 @@ def run_quiz(meta, quiz):
         print("  🟡 قريب — أعد قراءة الأخطاء الشائعة ثم أعد الاختبار غداً.")
     else:
         print("  🟠 أعد قراءة الدرس، وسأشرح النقاط الصعبة بطريقة أخرى (X.10).")
-    return pct
+    return pct, kinds
 
 
-def record(meta, pct):
+def record(meta, pct, per_kind=None):
+    """يسجّل نتيجة درس في ملف التقدّم.
+
+    يخزّن — فوق الإتقان — أبعاد بوابة X.9:
+      attempts: آخر 5 درجات (بُعد «الدرجات»)
+      dim:      نسب الإجابة الصحيحة حسب نوع السؤال
+                concept (مفاهيم) · term (مصطلحات) · calc (حساب/معادلات)
+    """
     if pct is None or not os.path.exists(PROFILE):
         return
     p = json.load(open(PROFILE, encoding="utf-8"))
@@ -105,17 +123,37 @@ def record(meta, pct):
         node_ids = json.loads(nodes.replace("'", '"'))
     except Exception:
         node_ids = []
+    per_kind = per_kind or {}
     for nid in node_ids:
         prev = p.get("topics", {}).get(nid, {}).get("mastery", 0)
         # سقف متحفّظ: اجتياز درس تمهيدي لا يعني إتقاناً بحثياً (بوابة X.9)
         new = max(prev, min(pct, 85))
         lvl = "L2" if new >= 75 else "L1"
-        p.setdefault("topics", {})[nid] = {"level": lvl, "mastery": new,
-                                           "status": status_of(new)}
+        t = p.setdefault("topics", {}).get(nid, {}) or {}
+        t["level"] = lvl
+        t["mastery"] = new
+        t["status"] = status_of(new)
+        attempts = list(t.get("attempts", []))[-4:] + [int(pct)]
+        t["attempts"] = attempts
+        t["best_quiz"] = max(int(pct), int(t.get("best_quiz", 0) or 0))
+        t["last_quiz"] = datetime.date.today().isoformat()
+        dim = dict(t.get("dim", {}) or {})
+        for k, v in per_kind.items():
+            dim[k] = int(round(max(float(dim.get(k, 0)), float(v))))
+        if dim:
+            t["dim"] = dim
+        p.setdefault("topics", {})[nid] = t
     p["updated"] = datetime.date.today().isoformat()
     json.dump(p, open(PROFILE, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     if node_ids:
-        print(f"  📝 سُجّلت النتيجة في: {', '.join(node_ids)}")
+        extra = ""
+        if per_kind:
+            extra = " · " + "، ".join(
+                f"{NAMES.get(k, k)} {v}٪" for k, v in sorted(per_kind.items()))
+        print(f"  📝 سُجّلت النتيجة في: {', '.join(node_ids)}{extra}")
+
+
+NAMES = {"concept": "المفاهيم", "term": "المصطلحات", "calc": "الحساب"}
 
 
 def status_of(m):
@@ -156,16 +194,16 @@ def main():
     if cmd == "show":
         show(meta, body)
     elif cmd == "quiz":
-        pct = run_quiz(meta, quiz)
-        record(meta, pct)
+        pct, kinds = run_quiz(meta, quiz)
+        record(meta, pct, kinds)
     elif cmd == "learn":
         show(meta, body)
         try:
             input("… اضغط Enter للبدء بالاختبار …")
         except (EOFError, KeyboardInterrupt):
             print()
-        pct = run_quiz(meta, quiz)
-        record(meta, pct)
+        pct, kinds = run_quiz(meta, quiz)
+        record(meta, pct, kinds)
     else:
         print(__doc__)
 

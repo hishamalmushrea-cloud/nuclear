@@ -109,6 +109,7 @@ generated: true
   ],
   "a": 0,
   "why": "من قائمة مفاهيم العقدة `math.calc2`: طرق التكامل (بالتبديل، بالتجزئة، الكسور الجزئية)",
+  "k": "concept",
   "alt": {
    "simple": "الموضوع يتمحور حول: طرق التكامل (بالتبديل، بالتجزئة، الكسور الجزئية)"
   }
@@ -123,6 +124,7 @@ generated: true
   ],
   "a": 3,
   "why": "هذه إحدى معادلات `math.calc2`؛ راجع قسم «المعادلات الأساسية» في الدرس.",
+  "k": "calc",
   "alt": {
    "simple": "احفظ معادلة واحدة محورية لكل موضوع، واشتقّ الباقي منها."
   }
@@ -137,6 +139,7 @@ generated: true
   ],
   "a": 0,
   "why": "`math.calc1` مدرج في شروط `math.calc2` في الرسم المعرفي.",
+  "k": "concept",
   "alt": {
    "simple": "الشرط المسبق هو ما تفترضه معلومةً قبل أن تبدأ."
   }
@@ -151,6 +154,7 @@ generated: true
   ],
   "a": 3,
   "why": "`math.vectors` يعتمد على `math.calc2` في الرسم المعرفي.",
+  "k": "concept",
   "alt": {
    "simple": "كل موضوع يفتح أبواباً؛ اعرف أين يوصلك قبل أن تدرسه."
   }
@@ -165,8 +169,24 @@ generated: true
   ],
   "a": 0,
   "why": "من تطبيقات `math.calc2`: حساب الجرعة الممتصة من التدفق",
+  "k": "concept",
   "alt": {
    "simple": "التطبيق هو ما يجعل الموضوع يستحق الوقت."
+  }
+ },
+ {
+  "q": "ما المقابل الإنجليزي لمصطلح «التكامل»؟",
+  "o": [
+   "Experimental nuclear physics",
+   "Neutron science (sources & scattering)",
+   "Integral calculus",
+   "Lifetime & reliability engineering"
+  ],
+  "a": 2,
+  "why": "`math.calc2` = التكامل / Integral calculus",
+  "k": "term",
+  "alt": {
+   "simple": "المصطلحات الإنجليزية ضرورية: 95٪ من الأدبيات بهذه اللغة."
   }
  }
 ]

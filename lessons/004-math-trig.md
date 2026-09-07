@@ -106,6 +106,7 @@ generated: true
   ],
   "a": 0,
   "why": "من قائمة مفاهيم العقدة `math.trig`: قانون الجيب وجيب التمام",
+  "k": "concept",
   "alt": {
    "simple": "الموضوع يتمحور حول: قانون الجيب وجيب التمام"
   }
@@ -120,6 +121,7 @@ generated: true
   ],
   "a": 2,
   "why": "هذه إحدى معادلات `math.trig`؛ راجع قسم «المعادلات الأساسية» في الدرس.",
+  "k": "calc",
   "alt": {
    "simple": "احفظ معادلة واحدة محورية لكل موضوع، واشتقّ الباقي منها."
   }
@@ -134,6 +136,7 @@ generated: true
   ],
   "a": 2,
   "why": "`math.geometry` مدرج في شروط `math.trig` في الرسم المعرفي.",
+  "k": "concept",
   "alt": {
    "simple": "الشرط المسبق هو ما تفترضه معلومةً قبل أن تبدأ."
   }
@@ -148,6 +151,7 @@ generated: true
   ],
   "a": 0,
   "why": "`math.complex` يعتمد على `math.trig` في الرسم المعرفي.",
+  "k": "concept",
   "alt": {
    "simple": "كل موضوع يفتح أبواباً؛ اعرف أين يوصلك قبل أن تدرسه."
   }
@@ -162,8 +166,24 @@ generated: true
   ],
   "a": 1,
   "why": "من تطبيقات `math.trig`: الموجات الكهرومغناطيسية",
+  "k": "concept",
   "alt": {
    "simple": "التطبيق هو ما يجعل الموضوع يستحق الوقت."
+  }
+ },
+ {
+  "q": "ما المقابل الإنجليزي لمصطلح «المثلثات»؟",
+  "o": [
+   "Integral calculus",
+   "Advanced spectroscopy",
+   "Pre-algebra & numeric fluency",
+   "Trigonometry"
+  ],
+  "a": 3,
+  "why": "`math.trig` = المثلثات / Trigonometry",
+  "k": "term",
+  "alt": {
+   "simple": "المصطلحات الإنجليزية ضرورية: 95٪ من الأدبيات بهذه اللغة."
   }
  }
 ]

@@ -1,6 +1,6 @@
 {
  "generated": true,
- "count": 40,
+ "count": 52,
  "groups": [
   {
    "key": "MAP",
@@ -11,7 +11,7 @@
      "path": "MAP/00-index.md",
      "title": "MAP/00 — الفهرس الشامل وطريقة استخدام النظام",
      "group": "MAP",
-     "size": 9447
+     "size": 9780
     },
     {
      "path": "MAP/01-grand-tree.md",
@@ -101,7 +101,7 @@
      "path": "MAP/15-agent-system.md",
      "title": "MAP/15 — نظام تشغيل الوكيل متعدد التخصصات (X.1 → X.34)",
      "group": "MAP",
-     "size": 15245
+     "size": 15602
     },
     {
      "path": "MAP/16-zero-to-researcher.md",
@@ -113,7 +113,7 @@
      "path": "MAP/17-expansion-log.md",
      "title": "MAP/17 — سجل توسّع الخريطة (نظام حيّ)",
      "group": "MAP",
-     "size": 7279
+     "size": 8878
     },
     {
      "path": "MAP/18-open-boundaries.md",
@@ -156,37 +156,109 @@
      "path": "lessons/003-math-geometry.md",
      "title": "الهندسة",
      "group": "lessons",
-     "size": 7542
+     "size": 8036
     },
     {
      "path": "lessons/004-math-trig.md",
      "title": "المثلثات",
      "group": "lessons",
-     "size": 7672
+     "size": 8186
     },
     {
      "path": "lessons/005-math-calc1.md",
      "title": "التفاضل",
      "group": "lessons",
-     "size": 7818
+     "size": 8351
     },
     {
      "path": "lessons/006-math-calc2.md",
      "title": "التكامل",
      "group": "lessons",
-     "size": 8407
+     "size": 8961
     },
     {
      "path": "lessons/007-math-prob.md",
      "title": "الاحتمالات",
      "group": "lessons",
-     "size": 8303
+     "size": 8823
     },
     {
      "path": "lessons/008-math-stat.md",
      "title": "الإحصاء",
      "group": "lessons",
-     "size": 8219
+     "size": 8744
+    },
+    {
+     "path": "lessons/009-math-ode.md",
+     "title": "المعادلات التفاضلية العادية",
+     "group": "lessons",
+     "size": 9185
+    },
+    {
+     "path": "lessons/010-math-linalg.md",
+     "title": "الجبر الخطي",
+     "group": "lessons",
+     "size": 8781
+    },
+    {
+     "path": "lessons/011-math-vectors.md",
+     "title": "تحليل المتجهات (حساب المتجهات)",
+     "group": "lessons",
+     "size": 9426
+    },
+    {
+     "path": "lessons/012-cs-python.md",
+     "title": "البرمجة العلمية بـ Python",
+     "group": "lessons",
+     "size": 8452
+    },
+    {
+     "path": "lessons/013-cs-numpy.md",
+     "title": "NumPy وSciPy وMatplotlib",
+     "group": "lessons",
+     "size": 8445
+    },
+    {
+     "path": "lessons/014-phys-mech.md",
+     "title": "الميكانيكا الكلاسيكية",
+     "group": "lessons",
+     "size": 9233
+    },
+    {
+     "path": "lessons/015-phys-energy.md",
+     "title": "الطاقة والزخم والزخم الزاوي",
+     "group": "lessons",
+     "size": 8583
+    },
+    {
+     "path": "lessons/016-phys-grav.md",
+     "title": "الجاذبية والحركة المدارية",
+     "group": "lessons",
+     "size": 7617
+    },
+    {
+     "path": "lessons/017-phys-em.md",
+     "title": "الكهرباء والمغناطيسية",
+     "group": "lessons",
+     "size": 9265
+    },
+    {
+     "path": "lessons/018-phys-waves.md",
+     "title": "الموجات والبصريات",
+     "group": "lessons",
+     "size": 7901
+    },
+    {
+     "path": "lessons/019-chem-general.md",
+     "title": "الكيمياء العامة",
+     "group": "lessons",
+     "size": 8572
+    },
+    {
+     "path": "lessons/020-intro-nuclear-physics.md",
+     "title": "الوحدة 3.1 — مقدمة الفيزياء النووية: أين تقع النواة؟",
+     "group": "lessons",
+     "size": 13108
     }
    ]
   },
@@ -280,7 +352,7 @@
      "path": "README.md",
      "title": "🧭 nuclear — الخريطة الكبرى للعلوم والتكنولوجيا النووية",
      "group": "",
-     "size": 6278
+     "size": 6482
     }
    ]
   }

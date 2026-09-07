@@ -114,6 +114,7 @@ generated: true
   ],
   "a": 3,
   "why": "من قائمة مفاهيم العقدة `math.stat`: تحليل التباين",
+  "k": "concept",
   "alt": {
    "simple": "الموضوع يتمحور حول: تحليل التباين"
   }
@@ -128,6 +129,7 @@ generated: true
   ],
   "a": 2,
   "why": "هذه إحدى معادلات `math.stat`؛ راجع قسم «المعادلات الأساسية» في الدرس.",
+  "k": "calc",
   "alt": {
    "simple": "احفظ معادلة واحدة محورية لكل موضوع، واشتقّ الباقي منها."
   }
@@ -142,6 +144,7 @@ generated: true
   ],
   "a": 0,
   "why": "`math.prob` مدرج في شروط `math.stat` في الرسم المعرفي.",
+  "k": "concept",
   "alt": {
    "simple": "الشرط المسبق هو ما تفترضه معلومةً قبل أن تبدأ."
   }
@@ -156,6 +159,7 @@ generated: true
   ],
   "a": 1,
   "why": "`env.dating` يعتمد على `math.stat` في الرسم المعرفي.",
+  "k": "concept",
   "alt": {
    "simple": "كل موضوع يفتح أبواباً؛ اعرف أين يوصلك قبل أن تدرسه."
   }
@@ -170,8 +174,24 @@ generated: true
   ],
   "a": 3,
   "why": "من تطبيقات `math.stat`: تقييم عدم يقين القياسات النووية",
+  "k": "concept",
   "alt": {
    "simple": "التطبيق هو ما يجعل الموضوع يستحق الوقت."
+  }
+ },
+ {
+  "q": "ما المقابل الإنجليزي لمصطلح «الإحصاء»؟",
+  "o": [
+   "Metals & nuclear alloys",
+   "Nuclear reactions & Q-values",
+   "Statistics",
+   "Isotopes in climate & paleo studies"
+  ],
+  "a": 2,
+  "why": "`math.stat` = الإحصاء / Statistics",
+  "k": "term",
+  "alt": {
+   "simple": "المصطلحات الإنجليزية ضرورية: 95٪ من الأدبيات بهذه اللغة."
   }
  }
 ]

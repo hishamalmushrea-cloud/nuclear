@@ -23,7 +23,7 @@ MAP/         الوثائق التأليفية والمولّدة (الخريط�
 graph/       knowledge_graph.json + edges.csv  (البيانات القابلة لإعادة الاستخدام)
 tools/kg/    العقد المعرفية (ملفات nodes_*.py) + المخطط + سجل المصادر
 tools/       build.py (بناء/تحقق/توليد) · progress.py (تقدّم) · lesson.py (درس+اختبار)
-lessons/     الدروس الرسمية (9 دروس؛ كل درس اختبار مدمج يُسجَّل تلقائياً)
+lessons/     الدروس الرسمية (21 عقدة مغطّاة؛ كل درس اختبار مدمج يُسجَّل تلقائياً)
 sims/        🔬 مختبرات افتراضية تفاعلية (بلا أي مصدر مشعّ حقيقي)
 BUILD/       🛠️ «كيف أصنع؟» — مشاريع حقيقية تبنيها بيدك (مع قواعد السلامة والقانون)
 progress/    ملف تقدّم المتعلّم + دفتر الباحث + تقارير الفجوات
@@ -57,13 +57,15 @@ python3 tools/gen_lesson.py list     # 📝 العُقد التي لا درس ل
 python3 tools/gen_lesson.py gen math.stat      # يولّد مسوّدة درس كاملة + اختبار
 python3 tools/progress.py due        # المستحق للمراجعة اليوم (X.19)
 python3 tools/progress.py review     # جلسة مراجعة متباعدة (SM-2)
+python3 tools/progress.py gate       # 🚦 بوابة المرحلة التالية (X.9: 80/70/80/75)
+python3 tools/progress.py gate --all # بوابات كل المراحل
 python3 tools/progress.py show    # حالة ملف التقدّم
 python3 tools/progress.py set nuc.fission L2 78   # تحديث إتقان موضوع
 python3 tools/progress.py report  # تقرير فجوات + الجاهزية للانتقال
 python3 -m http.server 8000       # المعاينة: index.html → site/index.html · docs.html · progress.html
 python3 tools/separation.py demo  # نظرية الفصل: SWU + الشلال المثالي + الحد الأدنى الديناميكي الحراري
 python3 tools/site_index.py       # إعادة بناء فهرس الوثائق site/docs_index.json (بعد إضافة ملف .md)
-python3 tools/selftest.py         # 🧪 حزام الأمان: 10 فحوصات (رسم · دروس · مولّد · SM-2 · فيزياء · أدوات)
+python3 tools/selftest.py         # 🧪 حزام الأمان: 11 فحصاً (رسم · دروس · مولّد · SM-2 · بوابات · فيزياء · أدوات)
 ```
 
 ## 🔒 حدود المحتوى (X.31 / X.32)

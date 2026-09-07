@@ -12,6 +12,8 @@
     python3 tools/progress.py next                       # أفضل المواضيع التالية
     python3 tools/progress.py due                        # المستحق للمراجعة اليوم (X.19)
     python3 tools/progress.py review                     # جلسة مراجعة متباعدة (SM-2)
+    python3 tools/progress.py gate                       # بوابة المرحلة التالية (X.9)
+    python3 tools/progress.py gate --all                 # بوابات كل المراحل
 """
 from __future__ import annotations
 
@@ -24,7 +26,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
-from kg.schema import DOMAINS, LEVELS_0_14, load_nodes, registry, user_level  # noqa: E402
+from kg.schema import DOMAINS, LEVELS_0_14, STAGES, load_nodes, registry, user_level  # noqa: E402
 
 PROFILE_JSON = os.path.join(ROOT, "progress", "profile.json")
 PROFILE_MD = os.path.join(ROOT, "progress", "profile.md")
@@ -74,6 +76,123 @@ def write_md(p):
     lines.append("")
     with open(PROFILE_MD, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
+
+
+# ------------------------------------------------------- بوابات الانتقال (X.9) ---
+GATE = {"concepts": 80, "marks": 70, "terms": 80, "cumulative": 75}
+DIM_AR = {"concepts": "المفاهيم", "marks": "الدرجات", "terms": "المصطلحات",
+          "cumulative": "التراكمي"}
+
+
+def stage_stats(p, nodes, stage, upto=None):
+    """إحصاء بوابة مرحلة ما: الأبعاد الأربعة + التغطية."""
+    upto = stage if upto is None else upto
+    ids = [n.id for n in nodes.values() if n.stage == stage]
+    cum = [n.id for n in nodes.values() if n.stage <= upto]
+    if not ids:
+        return None
+    topics = p.get("topics", {})
+
+    def mean_dim(key):
+        vals = [topics.get(i, {}).get("dim", {}).get(key) for i in ids]
+        vals = [v for v in vals if isinstance(v, (int, float))]
+        return (sum(vals) / len(vals)) if vals else 0.0
+
+    attempts = []
+    for i in ids:
+        attempts += list(topics.get(i, {}).get("attempts", []) or [])
+    marks = (sum(attempts) / len(attempts)) if attempts else 0.0
+
+    mastered = sum(1 for i in ids if topics.get(i, {}).get("mastery", 0) >= 80)
+    cumulative = (sum(topics.get(i, {}).get("mastery", 0) or 0 for i in cum) / len(cum)) if cum else 0.0
+    return {
+        "stage": stage,
+        "n": len(ids),
+        "concepts": mean_dim("concept"),
+        "terms": mean_dim("term"),
+        "calc": mean_dim("calc"),
+        "marks": marks,
+        "cumulative": cumulative,
+        "mastered": mastered,
+        "evidence": sum(1 for i in ids if (topics.get(i, {}).get("attempts") or [])),
+    }
+
+
+def gate_pass(st):
+    if st is None:
+        return False
+    return (st["concepts"] >= GATE["concepts"] and st["marks"] >= GATE["marks"]
+            and st["terms"] >= GATE["terms"] and st["cumulative"] >= GATE["cumulative"])
+
+
+def cmd_gate(args):
+    p = load_profile()
+    nodes = registry()
+    stages = sorted({n.stage for n in nodes.values()})
+
+    if args.all:
+        print("\n=== بوابات المراحل (X.9) ===")
+        print("  المرحلة  العدد  مفاهيم(80)  درجات(70)  مصطلحات(80)  تراكمي(75)  الحكم")
+        print("  ───────────────────────────────────────────────────────────────────────")
+        for st in stages:
+            s = stage_stats(p, nodes, st)
+            if not s:
+                continue
+            ok = gate_pass(s)
+            print(f"  {st:^7}  {s['n']:^5}  {s['concepts']:^10.0f}  {s['marks']:^9.0f}  "
+                  f"{s['terms']:^11.0f}  {s['cumulative']:^10.0f}  "
+                  f"{'🟢 مجتاز' if ok else '🔴 غير مجتاز'}")
+        print()
+        return
+
+    target = args.stage
+    if target is None:
+        for st in stages:
+            s = stage_stats(p, nodes, st)
+            if s and not gate_pass(s):
+                target = st
+                break
+        if target is None:
+            target = stages[-1]
+    s = stage_stats(p, nodes, target)
+    if not s:
+        print(f"لا عُقد في المرحلة {target}")
+        return
+
+    print(f"\n=== بوابة المرحلة {target} — {(STAGES.get(target, ''))} ===")
+    print(f"  عدد مواضيع المرحلة: {s['n']} · المتقن منها (≥80٪): {s['mastered']} · "
+          f"ما عليه دليل اختبار: {s['evidence']}\n")
+    rows = []
+    for key in ("concepts", "marks", "terms", "cumulative"):
+        v = s[key]
+        ok = v >= GATE[key]
+        rows.append((DIM_AR[key], f"{v:.0f}٪", f"≥ {GATE[key]}٪",
+                     "✅" if ok else "❌",
+                     "" if ok else f"ينقصك {GATE[key] - v:.0f} نقطة"))
+    print("  البُعد        قيمتك   الشرط    الحالة   ملاحظة")
+    print("  ─────────────────────────────────────────────────")
+    for r in rows:
+        print(f"  {r[0]:<10}  {r[1]:>6}  {r[2]:>7}   {r[3]}       {r[4]}")
+
+    passed = gate_pass(s)
+    print()
+    if passed:
+        print(f"  🟢 **المرحلة {target} مجتازة** — مسموح بالانتقال إلى المرحلة {target + 1}.")
+    else:
+        print(f"  🔴 **المرحلة {target} غير مجتازة بعد.**")
+        missing = [n for n in nodes.values()
+                   if n.stage == target and p.get("topics", {}).get(n.id, {}).get("mastery", 0) < 80]
+        if missing:
+            print(f"  مواضيع المرحلة التي لم تصل إلى 80٪ ({len(missing)}):")
+            for n in missing[:8]:
+                m = p.get("topics", {}).get(n.id, {}).get("mastery", 0)
+                print(f"    - {n.ar} (`{n.id}`) — {m}٪")
+            if len(missing) > 8:
+                print(f"    … و{len(missing) - 8} موضوعاً آخر")
+        if s["evidence"] < s["n"]:
+            print(f"  ⚠️  لا يوجد دليل اختبار لـ{s['n'] - s['evidence']} موضوعاً — "
+                  f"الأبعاد أعلاه لا تعكس إلا ما اختُبر.")
+        print("\n  ملاحظة X.9: البوابة لا تعاقب — تعيد الشرح بأسلوب آخر ثم تعيد الاختبار.")
 
 
 # ------------------------------------------------- التكرار المتباعد (X.19) -----
@@ -396,6 +515,11 @@ def main():
     s = sub.add_parser("review", parents=[common], help="جلسة مراجعة متباعدة (SM-2)")
     s.add_argument("--limit", type=int, default=10)
     s.set_defaults(func=cmd_review)
+
+    s = sub.add_parser("gate", parents=[common], help="بوابات الانتقال (X.9)")
+    s.add_argument("--stage", type=int)
+    s.add_argument("--all", action="store_true")
+    s.set_defaults(func=cmd_gate)
 
     args = ap.parse_args()
     args.func(args)
