@@ -289,6 +289,34 @@ def t_montecarlo():
                   f"الممتصّ القوي: A={r5['A']:.3f} > T={r5['T']:.3f}")
 
 
+# --------------------------------------------------- 5و) الزينون
+def t_xenon():
+    sys.path.insert(0, os.path.join(ROOT, "sims"))
+    import importlib
+    X = importlib.import_module("08_xenon_poisoning")
+    flux, sf, sa = 3e13, 0.10, 0.20
+    st = X.integrate(0.0, 0.0, flux, sf, 400 * 3600.0, dt=180.0)
+    I0, X0 = st[-1][1], st[-1][2]
+    xa = X.xe_eq(flux, sf)
+    if abs(X0 - xa) / xa > 0.005:
+        return False, f"الاستقرار العددي {X0:.3e} ≠ التحليلي {xa:.3e}"
+    r_eq = X.worth(X0, sa)
+    if not (1500 < abs(r_eq) * 1e5 < 4000):
+        return False, f"قيمة زينون التشغيل غير واقعية: {r_eq*1e5:.0f} pcm (المتوقع ~2600)"
+    tj = X.integrate(I0, X0, 0.0, sf, 72 * 3600.0, dt=60.0)
+    pt, px = max(((t, x) for t, _, x in tj), key=lambda p: p[1])
+    ph = pt / 3600.0
+    if not (6.0 <= ph <= 13.0):
+        return False, f"زمن الذروة {ph:.1f} س خارج المدى المتوقع (6–13 س)"
+    if px / X0 < 1.3:
+        return False, f"الذروة {px/X0:.2f}× لا تكوّن حفرة حقيقية"
+    rho_p = X.worth(px, sa)
+    if abs(rho_p) <= abs(r_eq):
+        return False, "الذروة يجب أن تكون أسوأ من حالة التشغيل"
+    return True, (f"استقرار مطابق للتحليلي · ρ_تشغيل={r_eq*1e5:.0f} pcm · "
+                  f"الذروة عند {ph:.1f} س = {px/X0:.2f}× ⇒ ρ={rho_p*1e5:.0f} pcm")
+
+
 # --------------------------------------------------- 6) ملف التقدّم
 def t_profile():
     from kg.schema import registry  # noqa: E402
@@ -336,6 +364,7 @@ def main() -> int:
     check("التكرار المتباعد (SM-2)", t_sm2)
     check("بوابات الانتقال X.9", t_gates)
     check("مونتي-كارلو للنقل (حفظ العدد)", t_montecarlo)
+    check("الزينون وحفرة اليود", t_xenon)
     check("ملف التقدّم مطابق للرسم", t_profile)
     check("أدوات سطر الأوامر", t_cli)
 

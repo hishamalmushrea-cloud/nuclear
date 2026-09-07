@@ -1,6 +1,6 @@
 {
  "generated": true,
- "count": 84,
+ "count": 85,
  "groups": [
   {
    "key": "MAP",
@@ -113,7 +113,7 @@
      "path": "MAP/17-expansion-log.md",
      "title": "MAP/17 — سجل توسّع الخريطة (نظام حيّ)",
      "group": "MAP",
-     "size": 11908
+     "size": 13224
     },
     {
      "path": "MAP/18-open-boundaries.md",
@@ -283,6 +283,12 @@
      "title": "الوحدة 3.4 — التفاعلات النووية والـ Q-value",
      "group": "lessons",
      "size": 15849
+    },
+    {
+     "path": "lessons/024-cross-sections-and-barns.md",
+     "title": "الوحدة 4.1 — المقطع العرضي والـ barn",
+     "group": "lessons",
+     "size": 17049
     },
     {
      "path": "lessons/024-math-nummethods.md",
@@ -463,7 +469,7 @@
      "path": "sims/README.md",
      "title": "🔬 المختبرات الافتراضية (`sims/`)",
      "group": "sims",
-     "size": 3095
+     "size": 3249
     }
    ]
   },
@@ -544,7 +550,7 @@
      "path": "README.md",
      "title": "🧭 nuclear — الخريطة الكبرى للعلوم والتكنولوجيا النووية",
      "group": "",
-     "size": 6869
+     "size": 6921
     }
    ]
   }
