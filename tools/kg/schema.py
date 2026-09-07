@@ -138,6 +138,11 @@ SOURCES: Dict[str, Dict[str, str]] = {
     # --- مستوى A: كتب أكاديمية مرجعية ---
     "Krane": {"level": "A", "ar": "Krane, Introductory Nuclear Physics (Wiley)", "url": ""},
     "Lamarsh": {"level": "A", "ar": "Lamarsh & Baratta, Introduction to Nuclear Engineering", "url": ""},
+    "Benedict-Pigford": {"level": "A", "ar": "Benedict, Pigford & Levi, Nuclear Chemical Engineering (نظرية الفصل والشلالات)", "url": ""},
+    "IAEA-SSG-27": {"level": "A", "ar": "IAEA SSG-27 (Rev.1), 2022: سلامة الحرجة في التعامل مع المواد الانشطارية",
+                    "url": "https://www-pub.iaea.org/MTCD/Publications/PDF/PUB1995_web.pdf"},
+    "ANSI-ANS-8.1": {"level": "A", "ar": "ANSI/ANS-8.1: سلامة الحرجة في العمليات خارج المفاعلات", "url": ""},
+    "LA-13638": {"level": "B", "ar": "LANL LA-13638 (2000): مراجعة حوادث الحرجة", "url": ""},
     "LamarshTheory": {"level": "A", "ar": "Lamarsh, Introduction to Nuclear Reactor Theory", "url": ""},
     "Duderstadt": {"level": "A", "ar": "Duderstadt & Hamilton, Nuclear Reactor Analysis", "url": ""},
     "Stacey": {"level": "A", "ar": "Stacey, Nuclear Reactor Physics (Wiley)", "url": ""},

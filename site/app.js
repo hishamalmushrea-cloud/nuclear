@@ -9,7 +9,9 @@
   const levelFilter = document.getElementById('levelFilter');
   const statsEl = document.getElementById('stats');
 
-  let DATA = null, nodes = [], byId = new Map(), edges = [];
+  const colorMode = document.getElementById('colorMode');
+  const readyOnly = document.getElementById('readyOnly');
+  let DATA = null, PROF = {}, nodes = [], byId = new Map(), edges = [];
   let view = { x: 0, y: 0, k: 0.8 };
   let hover = null, selected = null, prevHighlight = new Set();
 
@@ -68,6 +70,33 @@
     return COLORS[d];
   }
 
+  function masteryOf(id) {
+    const t = PROF[id];
+    return t && typeof t.mastery === 'number' ? t.mastery : 0;
+  }
+
+  function masteryColor(p) {
+    if (p >= 92) return '#7dd3fc';
+    if (p >= 80) return '#4ade80';
+    if (p >= 65) return '#a3e635';
+    if (p >= 45) return '#facc15';
+    if (p >= 25) return '#fb923c';
+    if (p > 0)   return '#f87171';
+    return '#5b6779';
+  }
+
+  /* «الجاهز للدراسة الآن»: شروطه كلها ≥ PASS وإتقانه هو دون PASS */
+  const PASS = 80;
+  function readySet() {
+    const s = new Set();
+    nodes.forEach(n => {
+      if (masteryOf(n.id) >= PASS) return;
+      const pre = (byId.get(n.id) && byId.get(n.id).prereqs) || [];
+      if (pre.every(q => masteryOf(q) >= PASS)) s.add(n.id);
+    });
+    return s;
+  }
+
   function highlightSet() {
     const s = new Set();
     if (selected) {
@@ -115,7 +144,8 @@
       const inHL = !hasHL || hl.has(n.id);
       ctx.globalAlpha = inHL ? 1 : dim;
       const r = 6 + (n.difficulty || 1) * 1.6;
-      ctx.fillStyle = domainColor(n.domain);
+      ctx.fillStyle = (colorMode && colorMode.value === 'mastery')
+        ? masteryColor(masteryOf(n.id)) : domainColor(n.domain);
       if (n.depth === 'research') { ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; }
       else if (n.depth === 'advanced' || n.depth === 'specialized') { ctx.strokeStyle = 'rgba(255,255,255,.65)'; ctx.lineWidth = 1.4; }
       else { ctx.strokeStyle = 'rgba(255,255,255,.25)'; ctx.lineWidth = 1; }
@@ -214,6 +244,9 @@
         <span class="badge">صعوبة ${n.difficulty}/5</span>
         <span class="badge">${n.hours} ساعة</span>
         <span class="badge">عمق الرسم ${n.graph_level}</span>
+        <span class="badge" style="border-color:${masteryColor(masteryOf(n.id))}">
+          إتقاني: ${masteryOf(n.id)}٪ · ${(PROF[n.id] && PROF[n.id].level) || 'L0'}
+        </span>
       </div>
 
       <h3>المفاهيم</h3>
@@ -242,9 +275,12 @@
 
   function applyFilters() {
     const d = domainFilter.value, l = levelFilter.value;
-    nodes = DATA.nodes.filter(n => (!d || n.domain === d) && (!l || String(n.level_0_14) === l));
+    const ready = readyOnly && readyOnly.checked ? readySet() : null;
+    nodes = DATA.nodes.filter(n => (!d || n.domain === d) && (!l || String(n.level_0_14) === l)
+      && (!ready || ready.has(n.id)));
     edges = DATA.edges.filter(e => byId.has(e.from) && byId.has(e.to) &&
-      (!d || byId.get(e.from).domain === d) && (!l || String(byId.get(e.from).level_0_14) === l));
+      (!d || byId.get(e.from).domain === d) && (!l || String(byId.get(e.from).level_0_14) === l) &&
+      (!ready || (ready.has(e.from) && ready.has(e.to))));
     layout();
     statsEl.textContent = `${nodes.length} موضوع · ${edges.length} رابط`;
     draw();
@@ -268,12 +304,31 @@
       levelFilter.appendChild(o);
     }
     const legend = document.getElementById('legend');
-    legend.innerHTML = doms.map(d =>
-      `<span class="lg"><i style="background:${domainColor(d)}"></i>${(DATA.meta.domains[d] || {}).ar || d}</span>`).join('');
+    const domainLegend = () => {
+      legend.className = 'legend';
+      legend.innerHTML = doms.map(d =>
+        `<span class="lg"><i style="background:${domainColor(d)}"></i>${(DATA.meta.domains[d] || {}).ar || d}</span>`).join('');
+    };
+    const masteryLegend = () => {
+      legend.className = 'mastery-legend';
+      legend.innerHTML = [['لم يُبدأ', 0], ['مبتدئ', 25], ['متوسط', 45], ['متقن', 65],
+                          ['متقدم', 80], ['بحثي', 92]]
+        .map(([t, p]) => `<span><i style="background:${masteryColor(p)}"></i>${t} (${p}+)</span>`).join('');
+    };
+    const refreshLegend = () => (colorMode.value === 'mastery' ? masteryLegend() : domainLegend());
+    colorMode.addEventListener('change', () => { refreshLegend(); draw(); });
+    if (readyOnly) readyOnly.addEventListener('change', applyFilters);
     nodes = DATA.nodes.slice();
     edges = DATA.edges.slice();
-    layout();
-    statsEl.textContent = `${nodes.length} موضوع · ${edges.length} رابط`;
+    try {
+      const pr = await fetch('../progress/profile.json', { cache: 'no-store' });
+      const pj = await pr.json();
+      PROF = (pj && pj.topics) || {};
+    } catch (e) { PROF = {}; /* لا ملف تقدّم: كل شيء صفر */ }
+    const done = DATA.nodes.filter(n => masteryOf(n.id) >= PASS).length;
+    statsEl.textContent = `${nodes.length} موضوع · ${edges.length} رابط · متقن ${done}`
+      + (Object.keys(PROF).length ? '' : ' (لا ملف تقدّم)');
+    refreshLegend();
     document.getElementById('resetView').addEventListener('click', () => { fitToView(); draw(); });
     search.addEventListener('input', draw);
     domainFilter.addEventListener('change', applyFilters);

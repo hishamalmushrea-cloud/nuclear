@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>الخريطة الكبرى للعلوم النووية — عارض تفاعلي</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="docs.css">
 </head>
 <body>
 <div id="app">
@@ -15,6 +16,11 @@
       <input id="search" type="search" placeholder="ابحث: عمر النصف، k_eff، nuc.fission…" autocomplete="off">
       <select id="domainFilter"><option value="">كل المجالات</option></select>
       <select id="levelFilter"><option value="">كل المستويات (0–14)</option></select>
+      <select id="colorMode">
+        <option value="domain">تلوين: المجال</option>
+        <option value="mastery">تلوين: الإتقان</option>
+      </select>
+      <label class="chk"><input type="checkbox" id="readyOnly"> الجاهز للدراسة الآن</label>
       <button id="resetView">إعادة ضبط العرض</button>
       <span id="stats" class="stats"></span>
     </div>

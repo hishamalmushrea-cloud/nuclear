@@ -257,6 +257,12 @@ phys.condmat,mat.characterization
 meas.spectroscopy,mat.characterization
 mat.ceramics,mat.fuels
 rx.fuel,mat.fuels
+chem.isotope,fuel.separation
+phys.thermo,fuel.separation
+math.calc1,fuel.separation
+fuel.separation,fuel.enrichment_systems
+fuel.fabrication,fuel.enrichment_systems
+sec.nonprolif,fuel.enrichment_systems
 nuc.decay,rad.types
 phys.atomic,rad.types
 rad.types,rad.sources
@@ -325,6 +331,9 @@ safe.human,safe.accidents
 hist.timeline,safe.accidents
 safe.did,safe.reg
 pol.regulatory,safe.reg
+rx.criticality,safe.criticality
+safe.hazard,safe.criticality
+math.stat,safe.criticality
 phys.em,meas.electronics
 math.complex,meas.electronics
 meas.electronics,meas.signal

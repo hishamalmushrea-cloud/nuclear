@@ -7,10 +7,10 @@
 
 ## إحصاءات الخريطة
 
-- عدد العقد (الموضوعات): **244**
+- عدد العقد (الموضوعات): **247**
 - عدد المجالات: **22**
-- إجمالي الساعات التقديرية لكل الخريطة: **9,530 ساعة**
-- الساعات للمواد **الأساسية (core)** فقط: **5,490 ساعة** (≈ 3 سنوات دراسة بدوام كامل)
+- إجمالي الساعات التقديرية لكل الخريطة: **9,620 ساعة**
+- الساعات للمواد **الأساسية (core)** فقط: **5,525 ساعة** (≈ 3 سنوات دراسة بدوام كامل)
 - أطول سلسلة شرط مسبق (عمق الرسم): **31** مستوى
 
 ## الشجرة بحسب المجال
@@ -342,7 +342,7 @@
   المرحلة 6 (المفاعلات والحراريات والمواد) · صعوبة 5/5 · 60 ساعة · 🔵 أساسي · الشروط: `rx.diffusion`, `math.mc`, `nuc.data`
 
 ### دورة الوقود والنفايات — `fuel` (Fuel Cycle & Waste)
-*11 موضوع · 400 ساعة تقديرية*
+*13 موضوع · 455 ساعة تقديرية*
 
 - **مصادر المواد النووية** · *Nuclear material resources* · `fuel.resources`  
   المرحلة 5 (الهندسة النووية) · صعوبة 2/5 · 25 ساعة · ⚪ مساند · الشروط: `fuel.intro`, `chem.inorganic`
@@ -350,6 +350,8 @@
   المرحلة 5 (الهندسة النووية) · صعوبة 3/5 · 35 ساعة · 🔵 أساسي · الشروط: `nuc.fission`, `chem.inorganic`
 - **تحويل وتخصيب وتصنيع الوقود** · *Conversion, enrichment & fuel fabrication* · `fuel.fabrication`  
   المرحلة 5 (الهندسة النووية) · صعوبة 4/5 · 35 ساعة · ⚪ مساند · الشروط: `fuel.resources`, `chem.isotope`
+- **نظرية فصل النظائر والشغل الفصلي (SWU)** · *Isotope separation theory & separative work* · `fuel.separation`  
+  المرحلة 5 (الهندسة النووية) · صعوبة 4/5 · 30 ساعة · ⚪ مساند · الشروط: `chem.isotope`, `phys.thermo`, `math.calc1`
 - **التخزين المؤقت: الرطب والجاف** · *Interim storage: wet & dry* · `fuel.storage`  
   المرحلة 6 (المفاعلات والحراريات والمواد) · صعوبة 3/5 · 30 ساعة · 🔵 أساسي · الشروط: `fuel.spent`, `rad.shielding`
 - **نقل المواد المشعة** · *Transport of radioactive material* · `fuel.transport`  
@@ -364,6 +366,8 @@
   المرحلة 6 (المفاعلات والحراريات والمواد) · صعوبة 5/5 · 45 ساعة · 🟣 متقدم · الشروط: `fuel.waste`, `chem.envradio`, `env.hydrology`
 - **أداء الوقود داخل المفاعل** · *In-reactor fuel performance* · `fuel.inreactor`  
   المرحلة 6 (المفاعلات والحراريات والمواد) · صعوبة 5/5 · 45 ساعة · 🟣 متقدم · الشروط: `rx.fuel`, `mat.damage`, `rx.thermalhyd`
+- **منظومات التخصيب: أنظمة وضمانات (مستوى أنظمة)** · *Enrichment systems: systems level & safeguards* · `fuel.enrichment_systems`  
+  المرحلة 7 (الإشعاع والكواشف والحماية) · صعوبة 4/5 · 25 ساعة · ⚪ مساند · الشروط: `fuel.separation`, `fuel.fabrication`, `sec.nonprolif`
 - **إعادة المعالجة: مفهوم علمي وسياساتي** · *Reprocessing: science & policy* · `fuel.reprocessing`  
   المرحلة 7 (الإشعاع والكواشف والحماية) · صعوبة 4/5 · 40 ساعة · 🟣 متقدم · الشروط: `fuel.spent`, `chem.radiochemistry`, `sec.nonprolif`
 
@@ -408,12 +412,14 @@
   المرحلة 9 (التطبيقات الطبية والصناعية والبيئية) · صعوبة 4/5 · 35 ساعة · 🟠 تخصصي · الشروط: `prot.principles`, `med.imaging`, `med.therapy`
 
 ### السلامة النووية والحوادث — `safe` (Nuclear Safety & Accidents)
-*11 موضوع · 475 ساعة تقديرية*
+*12 موضوع · 510 ساعة تقديرية*
 
 - **الدفاع في العمق** · *Defence in depth* · `safe.did`  
   المرحلة 5 (الهندسة النووية) · صعوبة 3/5 · 35 ساعة · 🔵 أساسي · الشروط: `rad.dosimetry`, `rx.principles`
 - **ثقافة السلامة والحوكمة** · *Safety culture & governance* · `safe.culture`  
   المرحلة 6 (المفاعلات والحراريات والمواد) · صعوبة 3/5 · 30 ساعة · 🔵 أساسي · الشروط: `safe.did`
+- **سلامة الحرجة في التعامل مع المواد الانشطارية** · *Criticality safety (fissile material handling)* · `safe.criticality`  
+  المرحلة 6 (المفاعلات والحراريات والمواد) · صعوبة 4/5 · 35 ساعة · 🔵 أساسي · الشروط: `rx.criticality`, `safe.hazard`, `math.stat`
 - **التقييم الحتمي للسلامة** · *Deterministic safety analysis* · `safe.dsa`  
   المرحلة 6 (المفاعلات والحراريات والمواد) · صعوبة 4/5 · 45 ساعة · 🔵 أساسي · الشروط: `safe.systems`, `rx.thermalhyd`, `math.nummethods`
 - **تحليل المخاطر وتحديد الأحداث البادئة** · *Hazard analysis & initiating events* · `safe.hazard`  

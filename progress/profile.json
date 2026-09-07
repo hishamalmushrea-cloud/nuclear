@@ -1,7 +1,7 @@
 {
-  "learner": "المتعلّم (بانتظار اختبار تحديد المستوى)",
-  "updated": "2026-09-01",
-  "notes": "لم يبدأ المتعلّم بعد. ابدأ: python3 tools/tutor.py",
+  "learner": "المتعلّم",
+  "updated": "2026-09-02",
+  "notes": "لم يبدأ الاختبار بعد. ابدأ: python3 tools/tutor.py — ثم راجع MAP/00 و MAP/18 و MAP/19.",
   "topics": {
     "math.pre": {
       "level": "L0",
@@ -658,6 +658,16 @@
       "mastery": 0,
       "status": "🔴 غير معروف"
     },
+    "fuel.separation": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "fuel.enrichment_systems": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
     "rad.types": {
       "level": "L0",
       "mastery": 0,
@@ -799,6 +809,11 @@
       "status": "🔴 غير معروف"
     },
     "safe.reg": {
+      "level": "L0",
+      "mastery": 0,
+      "status": "🔴 غير معروف"
+    },
+    "safe.criticality": {
       "level": "L0",
       "mastery": 0,
       "status": "🔴 غير معروف"

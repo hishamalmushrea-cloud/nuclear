@@ -13,7 +13,7 @@
 | `cs.numpy` | NumPy وSciPy وMatplotlib | الحوسبة العلمية والبرمجة | 1 | `cs.python`, `math.linalg` | `cs.data`, `cs.uq`, `disc.ml_nuclear`, `meas.signal`, `rx.kinetics` | 2/5 | 40 |
 | `cs.python` | البرمجة العلمية بـ Python | الحوسبة العلمية والبرمجة | 1 | `math.pre` | `cs.hpc`, `cs.numpy`, `math.mc`, `res.literature`, `res.reproducibility` | 2/5 | 40 |
 | `math.algebra` | الجبر | الرياضيات | 1 | `math.pre` | `math.complex`, `math.functions`, `math.linalg` | 2/5 | 45 |
-| `math.calc1` | التفاضل | الرياضيات | 1 | `math.functions` | `math.calc2`, `math.optimization`, `phys.mech`, `phys.thermo` | 3/5 | 45 |
+| `math.calc1` | التفاضل | الرياضيات | 1 | `math.functions` | `fuel.separation`, `math.calc2`, `math.optimization`, `phys.mech`, `phys.thermo` | 3/5 | 45 |
 | `math.calc2` | التكامل | الرياضيات | 1 | `math.calc1` | `math.analysis`, `math.nummethods`, `math.ode`, `math.prob`, `math.vectors` | 3/5 | 45 |
 | `math.functions` | الدوال | الرياضيات | 1 | `math.algebra` | `math.calc1` | 2/5 | 30 |
 | `math.geometry` | الهندسة | الرياضيات | 1 | `math.pre` | `math.trig` | 2/5 | 25 |
@@ -34,12 +34,12 @@
 | `math.complex` | الأعداد المركبة | الرياضيات | 2 | `math.algebra`, `math.trig` | `math.advanced`, `meas.electronics`, `phys.qm1` | 2/5 | 25 |
 | `math.nummethods` | التحليل العددي وطرق الحل العددي | الرياضيات | 2 | `math.calc2`, `math.linalg` | `cs.vv`, `safe.dsa` | 3/5 | 50 |
 | `math.prob` | الاحتمالات | الرياضيات | 2 | `math.calc2` | `math.mc`, `math.stat`, `nuc.crosssection`, `phys.statmech`, `safe.hazard`, `safe.psa` | 3/5 | 40 |
-| `math.stat` | الإحصاء | الرياضيات | 2 | `math.prob` | `chem.analytical`, `cs.data`, `cs.uq`, `env.dating`, `env.tracers`, `math.mc` (+7) | 3/5 | 45 |
+| `math.stat` | الإحصاء | الرياضيات | 2 | `math.prob` | `chem.analytical`, `cs.data`, `cs.uq`, `env.dating`, `env.tracers`, `math.mc` (+8) | 3/5 | 45 |
 | `phys.atomic` | الفيزياء الذرية | الفيزياء الأساسية | 2 | `phys.qm1` | `chem.structure`, `nuc.intro`, `nuc.isotopes`, `phys.molecular`, `rad.interaction`, `rad.types` | 3/5 | 45 |
 | `phys.emi` | الكهرومغناطيسية ومعادلات ماكسويل | الفيزياء الأساسية | 2 | `phys.em`, `math.vectors` | `fus.heating`, `fus.inertial`, `fus.plasma`, `part.accel`, `phys.qm1`, `phys.relativity` (+1) | 4/5 | 50 |
 | `phys.qm1` | ميكانيكا الكم (مستوى جامعي) | الفيزياء الأساسية | 2 | `math.ode`, `math.linalg`, `math.complex`, `phys.emi`, `phys.relativity` | `chem.phys`, `nuc.decay`, `part.intro`, `phys.atomic`, `phys.condmat`, `phys.qm2` | 4/5 | 70 |
 | `phys.relativity` | النسبية الخاصة | الفيزياء الأساسية | 2 | `phys.mech`, `phys.emi` | `nuc.binding`, `nuc.intro`, `nuc.reactions`, `part.intro`, `phys.accel_basics`, `phys.qm1` | 3/5 | 40 |
-| `phys.thermo` | الديناميكا الحرارية | الفيزياء الأساسية | 2 | `math.calc1`, `phys.energy` | `chem.phys`, `phys.statmech`, `rx.heat`, `rx.thermo_power` | 3/5 | 50 |
+| `phys.thermo` | الديناميكا الحرارية | الفيزياء الأساسية | 2 | `math.calc1`, `phys.energy` | `chem.phys`, `fuel.separation`, `phys.statmech`, `rx.heat`, `rx.thermo_power` | 3/5 | 50 |
 | `chem.inorganic` | الكيمياء غير العضوية | الكيمياء | 3 | `chem.bonding`, `chem.structure` | `chem.radiochemistry`, `fuel.intro`, `fuel.resources` | 3/5 | 45 |
 | `chem.organic` | الكيمياء العضوية | الكيمياء | 3 | `chem.bonding` | — | 3/5 | 45 |
 | `hist.projects` | تاريخ المشاريع والمؤسسات الكبرى | تاريخ العلوم النووية | 3 | `hist.timeline` | — | 3/5 | 30 |
@@ -62,7 +62,7 @@
 | `rad.types` | أنواع الإشعاع | الإشعاع والقياس | 3 | `nuc.decay`, `phys.atomic` | `fuel.waste`, `med.nucmed`, `rad.contamination`, `rad.interaction`, `rad.sources` | 2/5 | 25 |
 | `res.literature` | قراءة الأوراق ومراجعة الأدبيات | مناهج البحث العلمي | 3 | `cs.python` | `pol.ethics`, `res.openproblems`, `res.question`, `res.sources`, `res.writing` | 3/5 | 35 |
 | `res.sources` | تقييم المصادر ومدقق المصادر | مناهج البحث العلمي | 3 | `res.literature` | `res.question` | 3/5 | 25 |
-| `chem.isotope` | سلوك النظائر وفصلها | الكيمياء | 4 | `chem.phys`, `nuc.isotopes` | `env.tracers`, `fuel.fabrication`, `fus.blanket`, `ind.tracers` | 4/5 | 45 |
+| `chem.isotope` | سلوك النظائر وفصلها | الكيمياء | 4 | `chem.phys`, `nuc.isotopes` | `env.tracers`, `fuel.fabrication`, `fuel.separation`, `fus.blanket`, `ind.tracers` | 4/5 | 45 |
 | `chem.materials` | كيمياء المواد | الكيمياء | 4 | `chem.bonding`, `phys.condmat` | `mat.ceramics`, `mat.intro` | 3/5 | 35 |
 | `chem.nuclear` | الكيمياء النووية | الكيمياء | 4 | `chem.radiochemistry`, `nuc.reactions` | — | 4/5 | 50 |
 | `chem.radiochemistry` | الكيمياء الإشعاعية | الكيمياء | 4 | `chem.inorganic`, `nuc.decay`, `rad.interaction` | `chem.envradio`, `chem.hotcells`, `chem.nuclear`, `fuel.reprocessing`, `med.isotopes`, `rad.bio` | 4/5 | 50 |
@@ -100,9 +100,10 @@
 | `rad.transport` | انتقال الإشعاع والتوهين | الإشعاع والقياس | 4 | `rad.interaction`, `math.ode` | `ind.gauges`, `ind.ndt`, `rad.dosimetry`, `rad.shielding`, `sec.effects` | 4/5 | 45 |
 | `cs.uq` | كمّنة عدم اليقين (UQ) | الحوسبة العلمية والبرمجة | 5 | `math.stat`, `math.mc`, `cs.numpy` | `cs.vv`, `disc.ml_nuclear`, `disc.quantum`, `res.stats`, `safe.risk` | 4/5 | 45 |
 | `cs.vv` | التحقق والتحقق من الصحة (V&V) | الحوسبة العلمية والبرمجة | 5 | `cs.uq`, `math.nummethods` | `disc.digitaltwin`, `res.reproducibility`, `rx.multiphysics` | 4/5 | 35 |
-| `fuel.fabrication` | تحويل وتخصيب وتصنيع الوقود | دورة الوقود والنفايات | 5 | `fuel.resources`, `chem.isotope` | — | 4/5 | 35 |
+| `fuel.fabrication` | تحويل وتخصيب وتصنيع الوقود | دورة الوقود والنفايات | 5 | `fuel.resources`, `chem.isotope` | `fuel.enrichment_systems` | 4/5 | 35 |
 | `fuel.intro` | دورة الوقود النووي: نظرة شاملة | دورة الوقود والنفايات | 5 | `nuc.fission`, `chem.inorganic` | `fuel.resources`, `fuel.spent`, `pol.safeguards`, `sec.nonprolif` | 3/5 | 35 |
 | `fuel.resources` | مصادر المواد النووية | دورة الوقود والنفايات | 5 | `fuel.intro`, `chem.inorganic` | `fuel.fabrication` | 2/5 | 25 |
+| `fuel.separation` | نظرية فصل النظائر والشغل الفصلي (SWU) | دورة الوقود والنفايات | 5 | `chem.isotope`, `phys.thermo`, `math.calc1` | `fuel.enrichment_systems` | 4/5 | 30 |
 | `fus.plasma` | فيزياء البلازما: الأساس | الاندماج والبلازما | 5 | `phys.emi`, `phys.statmech`, `math.vectors` | `fus.diagnostics`, `fus.heating`, `fus.magnetic`, `fus.mhd` | 4/5 | 55 |
 | `mat.intro` | المواد النووية: مقدمة | المواد النووية | 5 | `phys.condmat`, `chem.materials` | `mat.ceramics`, `mat.damage`, `mat.metals`, `rx.fuel`, `rx.materials` | 3/5 | 30 |
 | `math.mc` | طرق مونتي كارلو | الرياضيات | 5 | `math.prob`, `math.stat`, `cs.python` | `cs.uq`, `med.dosimetry_plan`, `rx.transport` | 4/5 | 45 |
@@ -123,7 +124,7 @@
 | `res.question` | صياغة سؤال بحث والفرضيات | مناهج البحث العلمي | 5 | `res.literature`, `res.sources` | `res.design`, `res.openproblems` | 4/5 | 30 |
 | `res.stats` | الإحصاء التطبيقي للباحث النووي | مناهج البحث العلمي | 5 | `math.stat`, `cs.uq` | `res.writing` | 4/5 | 45 |
 | `rx.chain` | التفاعل المتسلسل | هندسة المفاعلات | 5 | `nuc.fission`, `nuc.neutron` | `rx.criticality` | 3/5 | 20 |
-| `rx.criticality` | الحرجية والأنظمة دون/فوق الحرجة | هندسة المفاعلات | 5 | `rx.neutroncycle`, `rx.chain` | `disc.ads`, `rx.kinetics` | 4/5 | 40 |
+| `rx.criticality` | الحرجية والأنظمة دون/فوق الحرجة | هندسة المفاعلات | 5 | `rx.neutroncycle`, `rx.chain` | `disc.ads`, `rx.kinetics`, `safe.criticality` | 4/5 | 40 |
 | `rx.fluids` | ميكانيكا الموائع | هندسة المفاعلات | 5 | `math.pde`, `phys.mech` | `env.dispersion`, `env.hydrology`, `fus.mhd`, `rx.thermalhyd` | 4/5 | 50 |
 | `rx.heat` | انتقال الحرارة | هندسة المفاعلات | 5 | `math.pde`, `phys.thermo` | `rx.thermalhyd` | 4/5 | 55 |
 | `rx.neutroncycle` | دورة النيوترونات | هندسة المفاعلات | 5 | `rx.principles` | `rx.criticality` | 4/5 | 35 |
@@ -191,14 +192,16 @@
 | `rx.smr` | المفاعلات الصغيرة والمعيارية والميكروية | هندسة المفاعلات | 6 | `rx.gen4`, `safe.did`, `pol.regulatory` | `disc.microreactors` | 4/5 | 40 |
 | `rx.thermalhyd` | الحراريات المائية للمفاعلات | هندسة المفاعلات | 6 | `rx.heat`, `rx.fluids` | `fuel.inreactor`, `rx.cooling`, `rx.core`, `rx.multiphysics`, `rx.power`, `safe.dsa` | 5/5 | 55 |
 | `rx.transport` | معادلة الانتقال والطرائق العددية | هندسة المفاعلات | 6 | `rx.diffusion`, `math.mc`, `nuc.data` | `disc.quantum`, `fus.neutronics`, `rx.core`, `rx.multiphysics` | 5/5 | 60 |
+| `safe.criticality` | سلامة الحرجة في التعامل مع المواد الانشطارية | السلامة النووية والحوادث | 6 | `rx.criticality`, `safe.hazard`, `math.stat` | — | 4/5 | 35 |
 | `safe.culture` | ثقافة السلامة والحوكمة | السلامة النووية والحوادث | 6 | `safe.did` | `disc.humanfactors_org`, `pol.governance`, `safe.human` | 3/5 | 30 |
 | `safe.dsa` | التقييم الحتمي للسلامة | السلامة النووية والحوادث | 6 | `safe.systems`, `rx.thermalhyd`, `math.nummethods` | `safe.risk`, `safe.severe` | 4/5 | 45 |
-| `safe.hazard` | تحليل المخاطر وتحديد الأحداث البادئة | السلامة النووية والحوادث | 6 | `safe.systems`, `math.prob` | `safe.psa` | 4/5 | 40 |
+| `safe.hazard` | تحليل المخاطر وتحديد الأحداث البادئة | السلامة النووية والحوادث | 6 | `safe.systems`, `math.prob` | `safe.criticality`, `safe.psa` | 4/5 | 40 |
 | `safe.human` | العوامل البشرية والموثوقية البشرية | السلامة النووية والحوادث | 6 | `safe.culture`, `math.stat` | `disc.humanfactors_org`, `mat.lifetime`, `safe.accidents`, `safe.psa` | 4/5 | 40 |
 | `safe.psa` | التقييم الاحتمالي للسلامة (PSA/PRA) | السلامة النووية والحوادث | 6 | `safe.hazard`, `math.prob`, `safe.human` | `safe.risk`, `safe.severe` | 5/5 | 60 |
 | `safe.systems` | أنظمة الأمان والتصنيف | السلامة النووية والحوادث | 6 | `safe.did`, `rx.control` | `fuel.decommissioning`, `safe.dsa`, `safe.hazard` | 4/5 | 40 |
 | `env.climate` | النظائر في الدراسات المناخية | البيئة والزراعة والنظائر | 7 | `env.tracers`, `env.dating` | — | 4/5 | 35 |
 | `env.remediation` | معالجة المواقع الملوثة وإعادة تأهيلها | البيئة والزراعة والنظائر | 7 | `meas.monitoring`, `env.radioecology`, `fuel.decommissioning` | — | 4/5 | 35 |
+| `fuel.enrichment_systems` | منظومات التخصيب: أنظمة وضمانات (مستوى أنظمة) | دورة الوقود والنفايات | 7 | `fuel.separation`, `fuel.fabrication`, `sec.nonprolif` | — | 4/5 | 25 |
 | `fuel.reprocessing` | إعادة المعالجة: مفهوم علمي وسياساتي | دورة الوقود والنفايات | 7 | `fuel.spent`, `chem.radiochemistry`, `sec.nonprolif` | `disc.ads`, `disc.transmutation` | 4/5 | 40 |
 | `fus.alt` | مفاهيم حبس بديلة ومتوسطة الكثافة | الاندماج والبلازما | 7 | `fus.magnetic`, `fus.inertial` | — | 4/5 | 35 |
 | `fus.diagnostics` | تشخيص البلازما | الاندماج والبلازما | 7 | `fus.plasma`, `meas.detectors`, `meas.signal` | — | 5/5 | 45 |
@@ -220,7 +223,7 @@
 | `safe.reg` | الرقابة والترخيص والتفتيش | السلامة النووية والحوادث | 7 | `safe.did`, `pol.regulatory` | — | 4/5 | 40 |
 | `safe.risk` | إدارة المخاطر واتخاذ القرار | السلامة النووية والحوادث | 7 | `safe.psa`, `safe.dsa`, `cs.uq` | `disc.economics_risk` | 4/5 | 40 |
 | `safe.severe` | تحليل الحوادث الشديدة | السلامة النووية والحوادث | 7 | `safe.dsa`, `safe.psa`, `fuel.inreactor` | `safe.accidents` | 5/5 | 55 |
-| `sec.nonprolif` | عدم الانتشار النووي | الأمن وعدم الانتشار والتاريخ العسكري | 7 | `hist.timeline`, `fuel.intro` | `fuel.reprocessing`, `pol.safeguards`, `pol.treaties`, `sec.armscontrol`, `sec.deterrence`, `sec.geopolitics` (+1) | 3/5 | 35 |
+| `sec.nonprolif` | عدم الانتشار النووي | الأمن وعدم الانتشار والتاريخ العسكري | 7 | `hist.timeline`, `fuel.intro` | `fuel.enrichment_systems`, `fuel.reprocessing`, `pol.safeguards`, `pol.treaties`, `sec.armscontrol`, `sec.deterrence` (+2) | 3/5 | 35 |
 | `sec.security` | الأمن النووي وحماية المنشآت | الأمن وعدم الانتشار والتاريخ العسكري | 7 | `sec.nonprolif`, `pol.regulatory` | — | 3/5 | 35 |
 | `disc.ads` | الأنظمة المدفوعة بالمسرعات (ADS) | مجالات مكتشفة/nاشئة | 8 | `part.accel`, `rx.criticality`, `fuel.reprocessing` | — | 5/5 | 30 |
 | `disc.advancedmanufacturing` | التصنيع المتقدم للمكونات النووية | مجالات مكتشفة/nاشئة | 8 | `mat.metals`, `mat.characterization` | — | 4/5 | 30 |

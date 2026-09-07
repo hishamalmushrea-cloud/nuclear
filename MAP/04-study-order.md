@@ -127,7 +127,7 @@
 36. **معايرة الأجهزة ومصادر الخطأ** (`meas.calibration`) — صعوبة 3/5 · 35 ساعة · الشروط: `rad.spectroscopy`, `math.stat`
 
 ### المرحلة 5: الهندسة النووية
-*33 موضوع · 1305 ساعة · المجموع التراكمي: 5,075 ساعة*
+*34 موضوع · 1335 ساعة · المجموع التراكمي: 5,105 ساعة*
 
 1. **التحسين والبحث العملياتي** (`math.optimization`) — صعوبة 3/5 · 35 ساعة · الشروط: `math.linalg`, `math.calc1`
 2. **صياغة سؤال بحث والفرضيات** (`res.question`) — صعوبة 4/5 · 30 ساعة · الشروط: `res.literature`, `res.sources`
@@ -142,29 +142,30 @@
 11. **فيزياء المسرعات** (`part.accel`) — صعوبة 5/5 · 45 ساعة · الشروط: `phys.accel_basics`, `phys.emi`
 12. **نظرية الحقول الكمومية** (`part.qft`) — صعوبة 5/5 · 80 ساعة · الشروط: `part.sm`, `phys.qm2`, `math.advanced`
 13. **المواد النووية: مقدمة** (`mat.intro`) — صعوبة 3/5 · 30 ساعة · الشروط: `phys.condmat`, `chem.materials`
-14. **دورة الوقود النووي: نظرة شاملة** (`fuel.intro`) — صعوبة 3/5 · 35 ساعة · الشروط: `nuc.fission`, `chem.inorganic`
-15. **الفيزياء النووية الفلكية والتخليق النووي** (`nuc.astro`) — صعوبة 4/5 · 40 ساعة · الشروط: `nuc.fusion_basics`, `nuc.reactions`
-16. **مصادر المواد النووية** (`fuel.resources`) — صعوبة 2/5 · 25 ساعة · الشروط: `fuel.intro`, `chem.inorganic`
-17. **تحويل وتخصيب وتصنيع الوقود** (`fuel.fabrication`) — صعوبة 4/5 · 35 ساعة · الشروط: `fuel.resources`, `chem.isotope`
-18. **التفاعل المتسلسل** (`rx.chain`) — صعوبة 3/5 · 20 ساعة · الشروط: `nuc.fission`, `nuc.neutron`
-19. **مبادئ المفاعل النووي** (`rx.principles`) — صعوبة 3/5 · 35 ساعة · الشروط: `nuc.fission`, `nuc.neutron`
-20. **علم النيوترونات (مصادر وتشتت)** (`nuc.neutronsci`) — صعوبة 4/5 · 40 ساعة · الشروط: `nuc.neutron`, `phys.condmat`
-21. **أنواع المفاعلات** (`rx.types`) — صعوبة 3/5 · 45 ساعة · الشروط: `rx.principles`
-22. **الدفاع في العمق** (`safe.did`) — صعوبة 3/5 · 35 ساعة · الشروط: `rad.dosimetry`, `rx.principles`
-23. **علم الأحياء الإشعاعي والتأثيرات البيولوجية** (`rad.bio`) — صعوبة 4/5 · 55 ساعة · الشروط: `rad.dosimetry`, `chem.radiochemistry`
-24. **دورة النيوترونات** (`rx.neutroncycle`) — صعوبة 4/5 · 35 ساعة · الشروط: `rx.principles`
-25. **التفاعلات عالية الطاقة** (`part.hep`) — صعوبة 5/5 · 40 ساعة · الشروط: `part.sm`, `part.detectors`
-26. **الهيئات الرقابية والمعايير** (`pol.regulatory`) — صعوبة 3/5 · 35 ساعة · الشروط: `rad.dosimetry`, `safe.did`
-27. **مبادئ الحماية الإشعاعية** (`prot.principles`) — صعوبة 3/5 · 35 ساعة · الشروط: `rad.dosimetry`, `rad.bio`
-28. **قياسات الإشعاع والقياسات المرجعية (Metrology)** (`rad.metrology`) — صعوبة 4/5 · 35 ساعة · الشروط: `rad.dosimetry`, `meas.calibration`
-29. **الحرجية والأنظمة دون/فوق الحرجة** (`rx.criticality`) — صعوبة 4/5 · 40 ساعة · الشروط: `rx.neutroncycle`, `rx.chain`
-30. **المراقبة وقياس الجرعات** (`prot.monitoring`) — صعوبة 3/5 · 35 ساعة · الشروط: `prot.principles`, `rad.detectors`
-31. **تصميم التجارب الآمن** (`res.design`) — صعوبة 4/5 · 35 ساعة · الشروط: `res.question`, `prot.principles`, `math.stat`
-32. **الوقاية المهنية والصحة المهنية** (`prot.occupational`) — صعوبة 3/5 · 35 ساعة · الشروط: `prot.monitoring`, `rad.contamination`
-33. **إدارة البيانات وإتاحتها** (`res.data`) — صعوبة 3/5 · 25 ساعة · الشروط: `cs.data`, `res.design`
+14. **نظرية فصل النظائر والشغل الفصلي (SWU)** (`fuel.separation`) — صعوبة 4/5 · 30 ساعة · الشروط: `chem.isotope`, `phys.thermo`, `math.calc1`
+15. **دورة الوقود النووي: نظرة شاملة** (`fuel.intro`) — صعوبة 3/5 · 35 ساعة · الشروط: `nuc.fission`, `chem.inorganic`
+16. **الفيزياء النووية الفلكية والتخليق النووي** (`nuc.astro`) — صعوبة 4/5 · 40 ساعة · الشروط: `nuc.fusion_basics`, `nuc.reactions`
+17. **مصادر المواد النووية** (`fuel.resources`) — صعوبة 2/5 · 25 ساعة · الشروط: `fuel.intro`, `chem.inorganic`
+18. **تحويل وتخصيب وتصنيع الوقود** (`fuel.fabrication`) — صعوبة 4/5 · 35 ساعة · الشروط: `fuel.resources`, `chem.isotope`
+19. **التفاعل المتسلسل** (`rx.chain`) — صعوبة 3/5 · 20 ساعة · الشروط: `nuc.fission`, `nuc.neutron`
+20. **مبادئ المفاعل النووي** (`rx.principles`) — صعوبة 3/5 · 35 ساعة · الشروط: `nuc.fission`, `nuc.neutron`
+21. **علم النيوترونات (مصادر وتشتت)** (`nuc.neutronsci`) — صعوبة 4/5 · 40 ساعة · الشروط: `nuc.neutron`, `phys.condmat`
+22. **أنواع المفاعلات** (`rx.types`) — صعوبة 3/5 · 45 ساعة · الشروط: `rx.principles`
+23. **الدفاع في العمق** (`safe.did`) — صعوبة 3/5 · 35 ساعة · الشروط: `rad.dosimetry`, `rx.principles`
+24. **علم الأحياء الإشعاعي والتأثيرات البيولوجية** (`rad.bio`) — صعوبة 4/5 · 55 ساعة · الشروط: `rad.dosimetry`, `chem.radiochemistry`
+25. **دورة النيوترونات** (`rx.neutroncycle`) — صعوبة 4/5 · 35 ساعة · الشروط: `rx.principles`
+26. **التفاعلات عالية الطاقة** (`part.hep`) — صعوبة 5/5 · 40 ساعة · الشروط: `part.sm`, `part.detectors`
+27. **الهيئات الرقابية والمعايير** (`pol.regulatory`) — صعوبة 3/5 · 35 ساعة · الشروط: `rad.dosimetry`, `safe.did`
+28. **مبادئ الحماية الإشعاعية** (`prot.principles`) — صعوبة 3/5 · 35 ساعة · الشروط: `rad.dosimetry`, `rad.bio`
+29. **قياسات الإشعاع والقياسات المرجعية (Metrology)** (`rad.metrology`) — صعوبة 4/5 · 35 ساعة · الشروط: `rad.dosimetry`, `meas.calibration`
+30. **الحرجية والأنظمة دون/فوق الحرجة** (`rx.criticality`) — صعوبة 4/5 · 40 ساعة · الشروط: `rx.neutroncycle`, `rx.chain`
+31. **المراقبة وقياس الجرعات** (`prot.monitoring`) — صعوبة 3/5 · 35 ساعة · الشروط: `prot.principles`, `rad.detectors`
+32. **تصميم التجارب الآمن** (`res.design`) — صعوبة 4/5 · 35 ساعة · الشروط: `res.question`, `prot.principles`, `math.stat`
+33. **الوقاية المهنية والصحة المهنية** (`prot.occupational`) — صعوبة 3/5 · 35 ساعة · الشروط: `prot.monitoring`, `rad.contamination`
+34. **إدارة البيانات وإتاحتها** (`res.data`) — صعوبة 3/5 · 25 ساعة · الشروط: `cs.data`, `res.design`
 
 ### المرحلة 6: المفاعلات والحراريات والمواد
-*66 موضوع · 2530 ساعة · المجموع التراكمي: 7,605 ساعة*
+*67 موضوع · 2565 ساعة · المجموع التراكمي: 7,670 ساعة*
 
 1. **الحوسبة عالية الأداء** (`cs.hpc`) — صعوبة 4/5 · 35 ساعة · الشروط: `cs.python`
 2. **الكتابة العلمية والنشر** (`res.writing`) — صعوبة 3/5 · 35 ساعة · الشروط: `res.literature`, `res.stats`
@@ -231,10 +232,11 @@
 63. **تفكيك المنشآت وإزالة التخصيص** (`fuel.decommissioning`) — صعوبة 4/5 · 40 ساعة · الشروط: `fuel.waste`, `meas.monitoring`, `safe.systems`
 64. **التقييم الحتمي للسلامة** (`safe.dsa`) — صعوبة 4/5 · 45 ساعة · الشروط: `safe.systems`, `rx.thermalhyd`, `math.nummethods`
 65. **تحليل المخاطر وتحديد الأحداث البادئة** (`safe.hazard`) — صعوبة 4/5 · 40 ساعة · الشروط: `safe.systems`, `math.prob`
-66. **التقييم الاحتمالي للسلامة (PSA/PRA)** (`safe.psa`) — صعوبة 5/5 · 60 ساعة · الشروط: `safe.hazard`, `math.prob`, `safe.human`
+66. **سلامة الحرجة في التعامل مع المواد الانشطارية** (`safe.criticality`) — صعوبة 4/5 · 35 ساعة · الشروط: `rx.criticality`, `safe.hazard`, `math.stat`
+67. **التقييم الاحتمالي للسلامة (PSA/PRA)** (`safe.psa`) — صعوبة 5/5 · 60 ساعة · الشروط: `safe.hazard`, `math.prob`, `safe.human`
 
 ### المرحلة 7: الإشعاع والكواشف والحماية
-*25 موضوع · 980 ساعة · المجموع التراكمي: 8,585 ساعة*
+*26 موضوع · 1005 ساعة · المجموع التراكمي: 8,675 ساعة*
 
 1. **مراجعة الأقران والنقد العلمي** (`res.peerreview`) — صعوبة 3/5 · 20 ساعة · الشروط: `res.writing`
 2. **التوكاماك** (`fus.tokamak`) — صعوبة 4/5 · 50 ساعة · الشروط: `fus.magnetic`, `fus.heating`
@@ -242,28 +244,29 @@
 4. **الحبس بالقصور الذاتي (ICF)** (`fus.inertial`) — صعوبة 5/5 · 45 ساعة · الشروط: `nuc.fusion_basics`, `phys.emi`, `phys.statmech`
 5. **عدم الانتشار النووي** (`sec.nonprolif`) — صعوبة 3/5 · 35 ساعة · الشروط: `hist.timeline`, `fuel.intro`
 6. **مفاهيم حبس بديلة ومتوسطة الكثافة** (`fus.alt`) — صعوبة 4/5 · 35 ساعة · الشروط: `fus.magnetic`, `fus.inertial`
-7. **إعادة المعالجة: مفهوم علمي وسياساتي** (`fuel.reprocessing`) — صعوبة 4/5 · 40 ساعة · الشروط: `fuel.spent`, `chem.radiochemistry`, `sec.nonprolif`
-8. **تشخيص البلازما** (`fus.diagnostics`) — صعوبة 5/5 · 45 ساعة · الشروط: `fus.plasma`, `meas.detectors`, `meas.signal`
-9. **العلاج الإشعاعي والعلاج بالنظائر** (`med.therapy`) — صعوبة 4/5 · 55 ساعة · الشروط: `rad.bio`, `rad.dosimetry`, `med.nucmed`
-10. **الحماية الإشعاعية في المؤسسات الطبية** (`med.rp`) — صعوبة 3/5 · 30 ساعة · الشروط: `prot.principles`, `med.nucmed`
-11. **الحوكمة النووية وإدارة البرامج** (`pol.governance`) — صعوبة 3/5 · 30 ساعة · الشروط: `pol.regulatory`, `safe.culture`
-12. **القانون النووي والمسؤولية المدنية** (`pol.law`) — صعوبة 3/5 · 30 ساعة · الشروط: `pol.regulatory`
-13. **الاتفاقيات والنظام الدولي** (`pol.treaties`) — صعوبة 3/5 · 35 ساعة · الشروط: `pol.regulatory`, `sec.nonprolif`
-14. **الأمن النووي وحماية المنشآت** (`sec.security`) — صعوبة 3/5 · 35 ساعة · الشروط: `sec.nonprolif`, `pol.regulatory`
-15. **النظائر في الدراسات المناخية** (`env.climate`) — صعوبة 4/5 · 35 ساعة · الشروط: `env.tracers`, `env.dating`
-16. **إنتاج النظائر الطبية** (`med.isotopes`) — صعوبة 4/5 · 40 ساعة · الشروط: `nuc.reactions`, `rx.research`, `chem.radiochemistry`
-17. **الضمانات النووية** (`pol.safeguards`) — صعوبة 4/5 · 40 ساعة · الشروط: `pol.regulatory`, `fuel.intro`, `sec.nonprolif`
-18. **الرقابة والترخيص والتفتيش** (`safe.reg`) — صعوبة 4/5 · 40 ساعة · الشروط: `safe.did`, `pol.regulatory`
-19. **تخطيط الجرعات والفيزياء الطبية** (`med.dosimetry_plan`) — صعوبة 5/5 · 50 ساعة · الشروط: `med.therapy`, `math.mc`, `cs.data`
-20. **معالجة المواقع الملوثة وإعادة تأهيلها** (`env.remediation`) — صعوبة 4/5 · 35 ساعة · الشروط: `meas.monitoring`, `env.radioecology`, `fuel.decommissioning`
-21. **إدارة المخاطر واتخاذ القرار** (`safe.risk`) — صعوبة 4/5 · 40 ساعة · الشروط: `safe.psa`, `safe.dsa`, `cs.uq`
-22. **تحليل الحوادث الشديدة** (`safe.severe`) — صعوبة 5/5 · 55 ساعة · الشروط: `safe.dsa`, `safe.psa`, `fuel.inreactor`
-23. **الحوادث النووية التاريخية: تحليل** (`safe.accidents`) — صعوبة 4/5 · 50 ساعة · الشروط: `safe.severe`, `safe.human`, `hist.timeline`
-24. **أخلاقيات العلم النووي والتواصل العام** (`pol.ethics`) — صعوبة 3/5 · 25 ساعة · الشروط: `safe.accidents`, `res.literature`
-25. **الاستجابة للطوارئ الإشعاعية** (`prot.emergency`) — صعوبة 4/5 · 40 ساعة · الشروط: `prot.principles`, `safe.accidents`, `env.dispersion`
+7. **منظومات التخصيب: أنظمة وضمانات (مستوى أنظمة)** (`fuel.enrichment_systems`) — صعوبة 4/5 · 25 ساعة · الشروط: `fuel.separation`, `fuel.fabrication`, `sec.nonprolif`
+8. **إعادة المعالجة: مفهوم علمي وسياساتي** (`fuel.reprocessing`) — صعوبة 4/5 · 40 ساعة · الشروط: `fuel.spent`, `chem.radiochemistry`, `sec.nonprolif`
+9. **تشخيص البلازما** (`fus.diagnostics`) — صعوبة 5/5 · 45 ساعة · الشروط: `fus.plasma`, `meas.detectors`, `meas.signal`
+10. **العلاج الإشعاعي والعلاج بالنظائر** (`med.therapy`) — صعوبة 4/5 · 55 ساعة · الشروط: `rad.bio`, `rad.dosimetry`, `med.nucmed`
+11. **الحماية الإشعاعية في المؤسسات الطبية** (`med.rp`) — صعوبة 3/5 · 30 ساعة · الشروط: `prot.principles`, `med.nucmed`
+12. **الحوكمة النووية وإدارة البرامج** (`pol.governance`) — صعوبة 3/5 · 30 ساعة · الشروط: `pol.regulatory`, `safe.culture`
+13. **القانون النووي والمسؤولية المدنية** (`pol.law`) — صعوبة 3/5 · 30 ساعة · الشروط: `pol.regulatory`
+14. **الاتفاقيات والنظام الدولي** (`pol.treaties`) — صعوبة 3/5 · 35 ساعة · الشروط: `pol.regulatory`, `sec.nonprolif`
+15. **الأمن النووي وحماية المنشآت** (`sec.security`) — صعوبة 3/5 · 35 ساعة · الشروط: `sec.nonprolif`, `pol.regulatory`
+16. **النظائر في الدراسات المناخية** (`env.climate`) — صعوبة 4/5 · 35 ساعة · الشروط: `env.tracers`, `env.dating`
+17. **إنتاج النظائر الطبية** (`med.isotopes`) — صعوبة 4/5 · 40 ساعة · الشروط: `nuc.reactions`, `rx.research`, `chem.radiochemistry`
+18. **الضمانات النووية** (`pol.safeguards`) — صعوبة 4/5 · 40 ساعة · الشروط: `pol.regulatory`, `fuel.intro`, `sec.nonprolif`
+19. **الرقابة والترخيص والتفتيش** (`safe.reg`) — صعوبة 4/5 · 40 ساعة · الشروط: `safe.did`, `pol.regulatory`
+20. **تخطيط الجرعات والفيزياء الطبية** (`med.dosimetry_plan`) — صعوبة 5/5 · 50 ساعة · الشروط: `med.therapy`, `math.mc`, `cs.data`
+21. **معالجة المواقع الملوثة وإعادة تأهيلها** (`env.remediation`) — صعوبة 4/5 · 35 ساعة · الشروط: `meas.monitoring`, `env.radioecology`, `fuel.decommissioning`
+22. **إدارة المخاطر واتخاذ القرار** (`safe.risk`) — صعوبة 4/5 · 40 ساعة · الشروط: `safe.psa`, `safe.dsa`, `cs.uq`
+23. **تحليل الحوادث الشديدة** (`safe.severe`) — صعوبة 5/5 · 55 ساعة · الشروط: `safe.dsa`, `safe.psa`, `fuel.inreactor`
+24. **الحوادث النووية التاريخية: تحليل** (`safe.accidents`) — صعوبة 4/5 · 50 ساعة · الشروط: `safe.severe`, `safe.human`, `hist.timeline`
+25. **أخلاقيات العلم النووي والتواصل العام** (`pol.ethics`) — صعوبة 3/5 · 25 ساعة · الشروط: `safe.accidents`, `res.literature`
+26. **الاستجابة للطوارئ الإشعاعية** (`prot.emergency`) — صعوبة 4/5 · 40 ساعة · الشروط: `prot.principles`, `safe.accidents`, `env.dispersion`
 
 ### المرحلة 8: السلامة النووية
-*22 موضوع · 730 ساعة · المجموع التراكمي: 9,315 ساعة*
+*22 موضوع · 730 ساعة · المجموع التراكمي: 9,405 ساعة*
 
 1. **التاريخ العسكري النووي** (`sec.history`) — صعوبة 3/5 · 40 ساعة · الشروط: `hist.timeline`
 2. **التحلية النووية** (`disc.desal`) — صعوبة 3/5 · 20 ساعة · الشروط: `rx.thermo_power`, `rx.economics`
@@ -289,7 +292,7 @@
 22. **تاريخ الحوادث والسلامة** (`hist.accidents_hist`) — صعوبة 3/5 · 30 ساعة · الشروط: `hist.timeline`, `safe.accidents`
 
 ### المرحلة 9: التطبيقات الطبية والصناعية والبيئية
-*7 موضوع · 215 ساعة · المجموع التراكمي: 9,530 ساعة*
+*7 موضوع · 215 ساعة · المجموع التراكمي: 9,620 ساعة*
 
 1. **الطاقة النووية الفضائية** (`disc.space`) — صعوبة 4/5 · 30 ساعة · الشروط: `rx.types`, `nuc.decay`
 2. **الحوسبة والاستشعار الكمومي في المجال النووي** (`disc.quantum`) — صعوبة 5/5 · 30 ساعة · الشروط: `phys.qm2`, `cs.uq`, `rx.transport`

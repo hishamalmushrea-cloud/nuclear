@@ -4,7 +4,7 @@
     "name_en": "Nuclear Master Knowledge Graph",
     "version": "1.0.0",
     "generated_by": "tools/build.py",
-    "node_count": 244,
+    "node_count": 247,
     "domain_count": 22,
     "critical_path_hours": 1345,
     "critical_path": [
@@ -295,6 +295,26 @@
       "Lamarsh": {
         "level": "A",
         "ar": "Lamarsh & Baratta, Introduction to Nuclear Engineering",
+        "url": ""
+      },
+      "Benedict-Pigford": {
+        "level": "A",
+        "ar": "Benedict, Pigford & Levi, Nuclear Chemical Engineering (نظرية الفصل والشلالات)",
+        "url": ""
+      },
+      "IAEA-SSG-27": {
+        "level": "A",
+        "ar": "IAEA SSG-27 (Rev.1), 2022: سلامة الحرجة في التعامل مع المواد الانشطارية",
+        "url": "https://www-pub.iaea.org/MTCD/Publications/PDF/PUB1995_web.pdf"
+      },
+      "ANSI-ANS-8.1": {
+        "level": "A",
+        "ar": "ANSI/ANS-8.1: سلامة الحرجة في العمليات خارج المفاعلات",
+        "url": ""
+      },
+      "LA-13638": {
+        "level": "B",
+        "ar": "LANL LA-13638 (2000): مراجعة حوادث الحرجة",
         "url": ""
       },
       "LamarshTheory": {
@@ -788,9 +808,11 @@
         "math.functions",
         "phys.mech",
         "phys.thermo",
-        "math.optimization"
+        "math.optimization",
+        "fuel.separation"
       ],
       "dependents": [
+        "fuel.separation",
         "math.calc2",
         "math.optimization",
         "phys.mech",
@@ -1294,6 +1316,7 @@
         "res.design",
         "res.stats",
         "rx.economics",
+        "safe.criticality",
         "safe.human"
       ]
     },
@@ -1633,12 +1656,12 @@
       "level_0_14": 11,
       "level_0_14_ar": "الحوسبة والمحاكاة",
       "related": [
+        "fuel.separation",
         "math.grouptheory",
         "math.nummethods",
         "phys.qm1",
         "phys.thermo",
-        "math.calc1",
-        "math.calc2"
+        "math.calc1"
       ],
       "dependents": []
     },
@@ -2419,6 +2442,7 @@
       ],
       "dependents": [
         "chem.phys",
+        "fuel.separation",
         "phys.statmech",
         "rx.heat",
         "rx.thermo_power"
@@ -3978,15 +4002,16 @@
       "level_0_14_ar": "فيزياء ذرية وميكانيكا الكم",
       "related": [
         "fuel.fabrication",
+        "fuel.separation",
         "nuc.binding",
         "nuc.intro",
         "nuc.isotopes",
-        "nuc.stability",
-        "chem.phys"
+        "nuc.stability"
       ],
       "dependents": [
         "env.tracers",
         "fuel.fabrication",
+        "fuel.separation",
         "fus.blanket",
         "ind.tracers"
       ]
@@ -5733,11 +5758,13 @@
         "rx.chain",
         "rx.neutroncycle",
         "rx.kinetics",
+        "safe.criticality",
         "disc.ads"
       ],
       "dependents": [
         "disc.ads",
-        "rx.kinetics"
+        "rx.kinetics",
+        "safe.criticality"
       ]
     },
     {
@@ -5797,10 +5824,10 @@
       "related": [
         "rx.control",
         "rx.instr",
+        "safe.criticality",
         "rx.criticality",
         "cs.uq",
-        "disc.ads",
-        "disc.ml_nuclear"
+        "disc.ads"
       ],
       "dependents": [
         "rx.control",
@@ -6055,10 +6082,10 @@
       "related": [
         "rx.fluids",
         "rx.thermo_power",
+        "fuel.separation",
         "rx.diffusion",
         "rx.thermalhyd",
-        "env.dispersion",
-        "math.advanced"
+        "env.dispersion"
       ],
       "dependents": [
         "rx.thermalhyd"
@@ -6253,11 +6280,11 @@
       "level_0_14_ar": "الهندسة النووية",
       "related": [
         "rx.heat",
+        "fuel.separation",
         "rx.economics",
         "phys.statmech",
         "chem.phys",
-        "disc.desal",
-        "disc.hydrogen"
+        "disc.desal"
       ],
       "dependents": [
         "disc.desal",
@@ -6991,10 +7018,10 @@
       "related": [
         "env.dating",
         "env.tracers",
+        "safe.criticality",
         "safe.human",
         "rx.thermo_power",
-        "cs.uq",
-        "math.mc"
+        "cs.uq"
       ],
       "dependents": [
         "disc.desal",
@@ -7158,12 +7185,15 @@
       "level_0_14_ar": "المفاعلات والحراريات والمواد",
       "related": [
         "fuel.resources",
+        "fuel.separation",
         "chem.isotope",
         "env.tracers",
         "ind.tracers",
-        "fus.blanket"
+        "fuel.enrichment_systems"
       ],
-      "dependents": []
+      "dependents": [
+        "fuel.enrichment_systems"
+      ]
     },
     {
       "id": "fuel.inreactor",
@@ -7375,12 +7405,12 @@
       "level_0_14": 6,
       "level_0_14_ar": "المفاعلات والحراريات والمواد",
       "related": [
+        "fuel.enrichment_systems",
         "med.isotopes",
         "pol.safeguards",
         "pol.treaties",
         "sec.nonprolif",
-        "sec.security",
-        "fuel.spent"
+        "sec.security"
       ],
       "dependents": [
         "disc.ads",
@@ -8165,6 +8195,127 @@
       "dependents": [
         "rx.multiphysics"
       ]
+    },
+    {
+      "id": "fuel.separation",
+      "ar": "نظرية فصل النظائر والشغل الفصلي (SWU)",
+      "en": "Isotope separation theory & separative work",
+      "domain": "fuel",
+      "domain_ar": "دورة الوقود والنفايات",
+      "stage": 5,
+      "stage_ar": "الهندسة النووية",
+      "depth": "supporting",
+      "depth_ar": "مساند: يُطلب لفهم مسار أو أكثر بعمق",
+      "difficulty": 4,
+      "hours": 30,
+      "prereqs": [
+        "chem.isotope",
+        "phys.thermo",
+        "math.calc1"
+      ],
+      "concepts": [
+        "دالة القيمة V(x) وشرط استقلال قدرة الفصل عن التركيز",
+        "الشغل الفصلي SWU وخطّية ميزان «القيمة» (استقلاله عن التقنية)",
+        "الشلال المثالي: عدم خلط تيارات بمختلف التراكيز وقدرة الفصل لكل مرحلة",
+        "الحد الأدنى الديناميكي الحراري للفصل (إنتروبيا الخلط) ومفارقة الكفاءة ~10⁻⁸",
+        "مفاضلة نسبة المخلف: سعر اللقيم مقابل سعر الشغل"
+      ],
+      "equations": [
+        "V(x) = (2x−1)·ln(x/(1−x))",
+        "V''(x) = 1/[x²(1−x)²]",
+        "SWU = P·V(x_p) + W·V(x_w) − F·V(x_f)",
+        "F/P = (x_p−x_w)/(x_f−x_w)   ,   W/P = (x_p−x_f)/(x_f−x_w)",
+        "δU = F·g²/8   (قدرة عنصر فصل واحد، مستقلة عن التركيز لأدنى رتبة)",
+        "W_min = R·T·[P·h(x_p) + W·h(x_w) − F·h(x_f)]  ,  h(x)=x·ln x+(1−x)·ln(1−x)"
+      ],
+      "applications": [
+        "اقتصاديات دورة الوقود",
+        "مقارنة تقنيات الفصل بمعيار واحد",
+        "تسعير SWU"
+      ],
+      "sources": [
+        "Benedict-Pigford",
+        "Lamarsh",
+        "Choppin"
+      ],
+      "tags": [
+        "مفتاح",
+        "جديد 2026-09"
+      ],
+      "tools": [
+        "ORIGEN/SCALE",
+        "Python"
+      ],
+      "graph_level": 15,
+      "level_0_14": 6,
+      "level_0_14_ar": "المفاعلات والحراريات والمواد",
+      "related": [
+        "fuel.fabrication",
+        "math.optimization",
+        "rx.heat",
+        "rx.thermo_power",
+        "chem.isotope",
+        "env.tracers"
+      ],
+      "dependents": [
+        "fuel.enrichment_systems"
+      ]
+    },
+    {
+      "id": "fuel.enrichment_systems",
+      "ar": "منظومات التخصيب: أنظمة وضمانات (مستوى أنظمة)",
+      "en": "Enrichment systems: systems level & safeguards",
+      "domain": "fuel",
+      "domain_ar": "دورة الوقود والنفايات",
+      "stage": 7,
+      "stage_ar": "الإشعاع والكواشف والحماية",
+      "depth": "supporting",
+      "depth_ar": "مساند: يُطلب لفهم مسار أو أكثر بعمق",
+      "difficulty": 4,
+      "hours": 25,
+      "prereqs": [
+        "fuel.separation",
+        "fuel.fabrication",
+        "sec.nonprolif"
+      ],
+      "concepts": [
+        "معماريات الشلال وأنماط الترابط (نظرياً وعلى مستوى الأنظمة)",
+        "محاسبية المواد ونقاط القياس الرئيسية (KMP)",
+        "الضمانات: الاحتواء والمراقبة، الختم، أخذ العينات، تحليل البيئة",
+        "اقتصاديات المنشأة: رأس المال مقابل الطاقة مقابل الشغل",
+        "حدود المعرفة المفتوحة في هذا المبحث (MAP/18)"
+      ],
+      "equations": [],
+      "applications": [
+        "تحليل أنظمة دورة الوقود",
+        "قراءة تقارير الضمانات",
+        "دراسات عدم الانتشار"
+      ],
+      "sources": [
+        "IAEA-SSG-27",
+        "WorldNuclear",
+        "SIPRI"
+      ],
+      "tags": [
+        "مفتاح",
+        "جديد 2026-09"
+      ],
+      "tools": [
+        "ORIGEN/SCALE",
+        "Python"
+      ],
+      "graph_level": 20,
+      "level_0_14": 6,
+      "level_0_14_ar": "المفاعلات والحراريات والمواد",
+      "related": [
+        "fuel.reprocessing",
+        "pol.safeguards",
+        "pol.treaties",
+        "sec.nonprolif",
+        "sec.security",
+        "sec.armscontrol"
+      ],
+      "dependents": []
     },
     {
       "id": "rad.types",
@@ -9476,14 +9627,15 @@
       "level_0_14": 8,
       "level_0_14_ar": "السلامة النووية",
       "related": [
+        "safe.criticality",
         "safe.dsa",
         "safe.psa",
         "safe.systems",
         "fuel.decommissioning",
-        "math.mc",
-        "nuc.crosssection"
+        "math.mc"
       ],
       "dependents": [
+        "safe.criticality",
         "safe.psa"
       ]
     },
@@ -9538,12 +9690,12 @@
       "level_0_14": 8,
       "level_0_14_ar": "السلامة النووية",
       "related": [
+        "safe.criticality",
         "safe.hazard",
         "safe.human",
         "mat.lifetime",
         "safe.accidents",
-        "safe.risk",
-        "safe.severe"
+        "safe.risk"
       ],
       "dependents": [
         "safe.risk",
@@ -9711,12 +9863,12 @@
       "level_0_14": 8,
       "level_0_14_ar": "السلامة النووية",
       "related": [
+        "safe.criticality",
         "safe.culture",
         "safe.psa",
         "env.dating",
         "env.tracers",
-        "mat.lifetime",
-        "rx.economics"
+        "mat.lifetime"
       ],
       "dependents": [
         "disc.humanfactors_org",
@@ -9893,6 +10045,72 @@
         "pol.treaties",
         "sec.security",
         "safe.culture"
+      ],
+      "dependents": []
+    },
+    {
+      "id": "safe.criticality",
+      "ar": "سلامة الحرجة في التعامل مع المواد الانشطارية",
+      "en": "Criticality safety (fissile material handling)",
+      "domain": "safe",
+      "domain_ar": "السلامة النووية والحوادث",
+      "stage": 6,
+      "stage_ar": "المفاعلات والحراريات والمواد",
+      "depth": "core",
+      "depth_ar": "أساسي إلزامي لكل المسارات",
+      "difficulty": 4,
+      "hours": 35,
+      "prereqs": [
+        "rx.criticality",
+        "safe.hazard",
+        "math.stat"
+      ],
+      "concepts": [
+        "k_eff وهامش تحت-الحرج: التحيز وعدم اليقين من التحقق التجريبي",
+        "مبدأ الطوارئ المزدوجة (Double Contingency)",
+        "الحدود الستة: كتلة، حجم، هندسة، تركيز، كثافة مساحية، تباعد/انعكاس",
+        "التهدئة والانعكاس والتفاعل بين الوحدات",
+        "منهجية التحقق: تجارب حرجة معيارية قبل قبول الكود",
+        "دروس الحوادث: توكايمورا 1999، وود ريفر 1964، لوس ألاموس 1945–46"
+      ],
+      "equations": [
+        "k_eff = k_∞ / [(1 + L²B²)(1 + τB²)]",
+        "B² = (π/a)² للوح   ,   B² = (2.405/R)² للأسطوانة",
+        "هامش الأمان = 1 − (k_eff_محسوب + تحيز + عدم يقين)"
+      ],
+      "applications": [
+        "منشآت الوقود والتحويل والتصنيع",
+        "المختبرات التي تتعامل مع مواد انشطارية",
+        "النقل والتخزين",
+        "التفكيك وإزالة التخصيص"
+      ],
+      "sources": [
+        "IAEA-SSG-27",
+        "ANSI-ANS-8.1",
+        "LA-13638",
+        "Duderstadt"
+      ],
+      "tags": [
+        "مفتاح",
+        "سلامة",
+        "جديد 2026-09"
+      ],
+      "tools": [
+        "SAPHIRE",
+        "RiskSpectrum",
+        "MAAP/MELCOR",
+        "Python"
+      ],
+      "graph_level": 27,
+      "level_0_14": 8,
+      "level_0_14_ar": "السلامة النووية",
+      "related": [
+        "safe.hazard",
+        "safe.human",
+        "safe.psa",
+        "env.dating",
+        "env.tracers",
+        "rx.economics"
       ],
       "dependents": []
     },
@@ -10808,6 +11026,7 @@
         "env.tracers",
         "ind.tracers",
         "fuel.fabrication",
+        "fuel.separation",
         "chem.isotope"
       ],
       "dependents": []
@@ -11515,8 +11734,8 @@
         "env.tracers",
         "med.imaging",
         "fuel.fabrication",
-        "prot.monitoring",
-        "chem.isotope"
+        "fuel.separation",
+        "prot.monitoring"
       ],
       "dependents": []
     },
@@ -11878,7 +12097,7 @@
         "meas.spectroscopy",
         "med.nucmed",
         "rx.economics",
-        "safe.human"
+        "safe.criticality"
       ],
       "dependents": [
         "env.climate"
@@ -12264,9 +12483,9 @@
         "pol.governance",
         "pol.law",
         "pol.treaties",
+        "fuel.enrichment_systems",
         "fuel.reprocessing",
-        "safe.reg",
-        "sec.nonprolif"
+        "safe.reg"
       ],
       "dependents": []
     },
@@ -12321,9 +12540,9 @@
         "pol.governance",
         "pol.law",
         "pol.safeguards",
+        "fuel.enrichment_systems",
         "fuel.reprocessing",
-        "safe.reg",
-        "sec.nonprolif"
+        "safe.reg"
       ],
       "dependents": [
         "sec.armscontrol",
@@ -12476,13 +12695,14 @@
       "level_0_14_ar": "السياسات والأمن وعدم الانتشار والتاريخ العسكري",
       "related": [
         "sec.security",
+        "fuel.enrichment_systems",
         "fuel.reprocessing",
         "pol.safeguards",
         "pol.treaties",
-        "safe.accidents",
-        "sec.armscontrol"
+        "safe.accidents"
       ],
       "dependents": [
+        "fuel.enrichment_systems",
         "fuel.reprocessing",
         "pol.safeguards",
         "pol.treaties",
@@ -12535,11 +12755,11 @@
       "level_0_14_ar": "السياسات والأمن وعدم الانتشار والتاريخ العسكري",
       "related": [
         "sec.nonprolif",
+        "fuel.enrichment_systems",
         "fuel.reprocessing",
         "pol.governance",
         "pol.law",
-        "pol.safeguards",
-        "pol.treaties"
+        "pol.safeguards"
       ],
       "dependents": []
     },
@@ -12589,8 +12809,8 @@
         "sec.geopolitics",
         "sec.nonprolif",
         "sec.security",
-        "fuel.reprocessing",
-        "pol.safeguards"
+        "fuel.enrichment_systems",
+        "fuel.reprocessing"
       ],
       "dependents": []
     },
@@ -12641,7 +12861,7 @@
         "sec.history",
         "sec.nonprolif",
         "sec.security",
-        "fuel.reprocessing"
+        "fuel.enrichment_systems"
       ],
       "dependents": []
     },
@@ -13670,6 +13890,7 @@
         "disc.transmutation",
         "fuel.reprocessing",
         "rx.kinetics",
+        "safe.criticality",
         "part.accel",
         "rx.criticality"
       ],
@@ -15521,6 +15742,30 @@
       "to": "mat.fuels"
     },
     {
+      "from": "chem.isotope",
+      "to": "fuel.separation"
+    },
+    {
+      "from": "phys.thermo",
+      "to": "fuel.separation"
+    },
+    {
+      "from": "math.calc1",
+      "to": "fuel.separation"
+    },
+    {
+      "from": "fuel.separation",
+      "to": "fuel.enrichment_systems"
+    },
+    {
+      "from": "fuel.fabrication",
+      "to": "fuel.enrichment_systems"
+    },
+    {
+      "from": "sec.nonprolif",
+      "to": "fuel.enrichment_systems"
+    },
+    {
       "from": "nuc.decay",
       "to": "rad.types"
     },
@@ -15791,6 +16036,18 @@
     {
       "from": "pol.regulatory",
       "to": "safe.reg"
+    },
+    {
+      "from": "rx.criticality",
+      "to": "safe.criticality"
+    },
+    {
+      "from": "safe.hazard",
+      "to": "safe.criticality"
+    },
+    {
+      "from": "math.stat",
+      "to": "safe.criticality"
     },
     {
       "from": "phys.em",

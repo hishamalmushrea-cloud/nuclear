@@ -20,6 +20,64 @@
     }) + "</pre>";
   }
 
+  function titleOf(path) {
+    for (const g of index.groups) {
+      const it = g.items.find(x => x.path === path);
+      if (it) return it.title;
+    }
+    return path;
+  }
+
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function mark(text, q) {
+    const i = text.toLowerCase().indexOf(q.toLowerCase());
+    if (i < 0) return esc(text);
+    return esc(text.slice(0, i)) + "<mark>" + esc(text.slice(i, i + q.length)) +
+           "</mark>" + esc(text.slice(i + q.length));
+  }
+
+  async function contentSearch(q) {
+    const paths = [];
+    index.groups.forEach(g => g.items.forEach(it => paths.push(it.path)));
+    sidebar.innerHTML = "<div class='empty'>يبحث في " + paths.length + " ملفاً…</div>";
+    const texts = await Promise.all(paths.map(p =>
+      fetch(BASE + p, { cache: "no-store" }).then(r => (r.ok ? r.text() : "")).catch(() => "")
+    ));
+    const hits = [];
+    paths.forEach((p, i) => {
+      const lines = texts[i].split(/\r?\n/);
+      let count = 0; const samples = [];
+      lines.forEach((ln, k) => {
+        if (ln.toLowerCase().indexOf(q.toLowerCase()) >= 0) {
+          count++;
+          if (samples.length < 2) samples.push({ n: k + 1, t: ln.trim().slice(0, 160) });
+        }
+      });
+      if (count) hits.push({ path: p, count: count, samples: samples });
+    });
+    hits.sort((a, b) => b.count - a.count);
+    if (!hits.length) {
+      sidebar.innerHTML = "<div class='empty'>لا نتائج في المحتوى عن «" + esc(q) + "».</div>";
+      return;
+    }
+    let html = "<div class='group'><div class='glabel'>🔍 نتائج المحتوى — " +
+      esc(q) + " (" + hits.length + " ملفاً)</div><ul>";
+    hits.forEach(h => {
+      html += "<li><a href='#" + encodeURIComponent(h.path) + "' data-path='" + h.path + "'>" +
+        esc(titleOf(h.path)) + "</a><span class='p'>" + h.count + " تطابقاً في " + h.path + "</span>";
+      h.samples.forEach(s => {
+        html += "<span class='snip'>س" + s.n + ": " + mark(s.t, q) + "</span>";
+      });
+      html += "</li>";
+    });
+    html += "</ul></div>";
+    sidebar.innerHTML = html;
+    countEl.textContent = hits.length + " ملف";
+  }
+
   function renderIndex(q) {
     q = (q || "").trim().toLowerCase();
     var html = "", n = 0;
@@ -72,6 +130,14 @@
   });
 
   filter.addEventListener("input", function () { renderIndex(filter.value); });
+  document.getElementById("deepSearch").addEventListener("click", function () {
+    const q = filter.value.trim();
+    if (q.length < 2) { countEl.textContent = "اكتب كلمتين على الأقل"; return; }
+    contentSearch(q);
+  });
+  filter.addEventListener("keydown", function (ev) {
+    if (ev.key === "Enter" && filter.value.trim().length >= 2) contentSearch(filter.value.trim());
+  });
 
   fetch("docs_index.json", { cache: "no-store" })
     .then(function (r) { return r.json(); })
