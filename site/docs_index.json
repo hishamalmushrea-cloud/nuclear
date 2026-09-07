@@ -1,6 +1,6 @@
 {
  "generated": true,
- "count": 66,
+ "count": 84,
  "groups": [
   {
    "key": "MAP",
@@ -113,7 +113,7 @@
      "path": "MAP/17-expansion-log.md",
      "title": "MAP/17 — سجل توسّع الخريطة (نظام حيّ)",
      "group": "MAP",
-     "size": 10272
+     "size": 11908
     },
     {
      "path": "MAP/18-open-boundaries.md",
@@ -279,6 +279,12 @@
      "size": 8637
     },
     {
+     "path": "lessons/023-nuclear-reactions-qvalue.md",
+     "title": "الوحدة 3.4 — التفاعلات النووية والـ Q-value",
+     "group": "lessons",
+     "size": 15849
+    },
+    {
      "path": "lessons/024-math-nummethods.md",
      "title": "التحليل العددي وطرق الحل العددي",
      "group": "lessons",
@@ -343,6 +349,108 @@
      "title": "الكيمياء التحليلية",
      "group": "lessons",
      "size": 8663
+    },
+    {
+     "path": "lessons/035-phys-statmech.md",
+     "title": "الفيزياء الإحصائية",
+     "group": "lessons",
+     "size": 8997
+    },
+    {
+     "path": "lessons/036-phys-molecular.md",
+     "title": "الفيزياء الجزيئية",
+     "group": "lessons",
+     "size": 7098
+    },
+    {
+     "path": "lessons/037-part-intro.md",
+     "title": "الجسيمات الأولية: مقدمة",
+     "group": "lessons",
+     "size": 8078
+    },
+    {
+     "path": "lessons/038-part-forces.md",
+     "title": "القوى الأساسية الأربع",
+     "group": "lessons",
+     "size": 7912
+    },
+    {
+     "path": "lessons/039-chem-organic.md",
+     "title": "الكيمياء العضوية",
+     "group": "lessons",
+     "size": 7150
+    },
+    {
+     "path": "lessons/040-chem-inorganic.md",
+     "title": "الكيمياء غير العضوية",
+     "group": "lessons",
+     "size": 8451
+    },
+    {
+     "path": "lessons/041-nuc-nucleons.md",
+     "title": "النيوكليونات والقوة النووية",
+     "group": "lessons",
+     "size": 8532
+    },
+    {
+     "path": "lessons/042-nuc-isotopes.md",
+     "title": "النظائر والنويدات وخريطة النويدات",
+     "group": "lessons",
+     "size": 9226
+    },
+    {
+     "path": "lessons/043-nuc-stability.md",
+     "title": "الاستقرار النووي وخط الاستقرار",
+     "group": "lessons",
+     "size": 9170
+    },
+    {
+     "path": "lessons/044-nuc-crosssection.md",
+     "title": "المقاطع العرضية",
+     "group": "lessons",
+     "size": 9194
+    },
+    {
+     "path": "lessons/045-nuc-fission.md",
+     "title": "الانشطار النووي",
+     "group": "lessons",
+     "size": 9103
+    },
+    {
+     "path": "lessons/046-nuc-fusion-basics.md",
+     "title": "الاندماج النووي: الأساس الفيزيائي",
+     "group": "lessons",
+     "size": 9450
+    },
+    {
+     "path": "lessons/047-rad-types.md",
+     "title": "أنواع الإشعاع",
+     "group": "lessons",
+     "size": 8617
+    },
+    {
+     "path": "lessons/048-rad-sources.md",
+     "title": "مصادر الإشعاع",
+     "group": "lessons",
+     "size": 8713
+    },
+    {
+     "path": "lessons/049-hist-projects.md",
+     "title": "تاريخ المشاريع والمؤسسات الكبرى",
+     "group": "lessons",
+     "size": 8477
+    },
+    {
+     "path": "lessons/050-res-literature.md",
+     "title": "قراءة الأوراق ومراجعة الأدبيات",
+     "group": "lessons",
+     "size": 9181
+    },
+    {
+     "path": "lessons/051-res-sources.md",
+     "title": "تقييم المصادر ومدقق المصادر",
+     "group": "lessons",
+     "size": 8434
     }
    ]
   },
@@ -355,7 +463,7 @@
      "path": "sims/README.md",
      "title": "🔬 المختبرات الافتراضية (`sims/`)",
      "group": "sims",
-     "size": 2919
+     "size": 3095
     }
    ]
   },
@@ -436,7 +544,7 @@
      "path": "README.md",
      "title": "🧭 nuclear — الخريطة الكبرى للعلوم والتكنولوجيا النووية",
      "group": "",
-     "size": 6753
+     "size": 6869
     }
    ]
   }

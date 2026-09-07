@@ -260,6 +260,35 @@ def t_gates():
     return True, f"العتبات 80/70/80/75 محفوظة · اجتياز كامل ✅ · سقوط عند مصطلحات 50٪ ❌"
 
 
+# --------------------------------------------------- 5هـ) مونتي-كارلو للنقل
+def t_montecarlo():
+    sys.path.insert(0, os.path.join(ROOT, "sims"))
+    import importlib
+    M = importlib.import_module("07_monte_carlo_transport")
+    M.seed(12345)
+    p = M.PRESETS[0]
+    a = 3.0 / p["St"]
+    r = M.run_histories(p["St"], p["Ss"], a, 4000)
+    bal = r["T"] + r["R"] + r["A"]
+    if abs(bal - 1.0) > 1e-9:
+        return False, f"حفظ العدد منحرف: T+R+A = {bal:.9f}"
+    if r["capped"]:
+        return False, f"{r['capped']} تاريخاً وصل سقف التصادمات"
+    if not (0.30 < r["T"] < 0.47):
+        return False, f"نفاذ غير متوقع للماء عند 3λ: T = {r['T']:.4f}"
+    if r["R"] <= r["T"]:
+        return False, f"توقّعنا ارتداداً أكبر من النفاذ (خراب المقامر): R={r['R']:.3f} T={r['T']:.3f}"
+    if r["A"] <= 0:
+        return False, "لا امتصاص رغم Σa > 0"
+    # وسط ممتصّ قوي: يجب أن يهيمن الامتصاص
+    p5 = M.PRESETS[4]
+    r5 = M.run_histories(p5["St"], p5["Ss"], 3.0 / p5["St"], 2000)
+    if r5["A"] <= r5["T"]:
+        return False, "في وسط ممتصّ قوي يجب أن يهيمن A على T"
+    return True, (f"حفظ العدد = 1 بالضبط · T={r['T']:.3f} R={r['R']:.3f} A={r['A']:.3f} · "
+                  f"الممتصّ القوي: A={r5['A']:.3f} > T={r5['T']:.3f}")
+
+
 # --------------------------------------------------- 6) ملف التقدّم
 def t_profile():
     from kg.schema import registry  # noqa: E402
@@ -306,6 +335,7 @@ def main() -> int:
     check("مولّد الدروس (حتمي + دروس صالحة)", t_generator)
     check("التكرار المتباعد (SM-2)", t_sm2)
     check("بوابات الانتقال X.9", t_gates)
+    check("مونتي-كارلو للنقل (حفظ العدد)", t_montecarlo)
     check("ملف التقدّم مطابق للرسم", t_profile)
     check("أدوات سطر الأوامر", t_cli)
 
