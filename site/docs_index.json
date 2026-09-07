@@ -1,6 +1,6 @@
 {
  "generated": true,
- "count": 52,
+ "count": 66,
  "groups": [
   {
    "key": "MAP",
@@ -11,7 +11,7 @@
      "path": "MAP/00-index.md",
      "title": "MAP/00 — الفهرس الشامل وطريقة استخدام النظام",
      "group": "MAP",
-     "size": 9780
+     "size": 9878
     },
     {
      "path": "MAP/01-grand-tree.md",
@@ -113,7 +113,7 @@
      "path": "MAP/17-expansion-log.md",
      "title": "MAP/17 — سجل توسّع الخريطة (نظام حيّ)",
      "group": "MAP",
-     "size": 8878
+     "size": 10272
     },
     {
      "path": "MAP/18-open-boundaries.md",
@@ -259,6 +259,90 @@
      "title": "الوحدة 3.1 — مقدمة الفيزياء النووية: أين تقع النواة؟",
      "group": "lessons",
      "size": 13108
+    },
+    {
+     "path": "lessons/021-mass-and-binding.md",
+     "title": "الوحدة 3.2 — الكتلة والطاقة الرابطة: من أين تأتي الطاقة أصلاً؟",
+     "group": "lessons",
+     "size": 15982
+    },
+    {
+     "path": "lessons/022-decay-and-halflife.md",
+     "title": "الوحدة 3.3 — التحلل الإشعاعي وعمر النصف",
+     "group": "lessons",
+     "size": 15553
+    },
+    {
+     "path": "lessons/023-math-complex.md",
+     "title": "الأعداد المركبة",
+     "group": "lessons",
+     "size": 8637
+    },
+    {
+     "path": "lessons/024-math-nummethods.md",
+     "title": "التحليل العددي وطرق الحل العددي",
+     "group": "lessons",
+     "size": 8939
+    },
+    {
+     "path": "lessons/025-cs-data.md",
+     "title": "تحليل البيانات وإدارتها",
+     "group": "lessons",
+     "size": 8761
+    },
+    {
+     "path": "lessons/026-phys-emi.md",
+     "title": "الكهرومغناطيسية ومعادلات ماكسويل",
+     "group": "lessons",
+     "size": 9377
+    },
+    {
+     "path": "lessons/027-phys-thermo.md",
+     "title": "الديناميكا الحرارية",
+     "group": "lessons",
+     "size": 9104
+    },
+    {
+     "path": "lessons/028-phys-relativity.md",
+     "title": "النسبية الخاصة",
+     "group": "lessons",
+     "size": 9117
+    },
+    {
+     "path": "lessons/029-phys-qm1.md",
+     "title": "ميكانيكا الكم (مستوى جامعي)",
+     "group": "lessons",
+     "size": 10080
+    },
+    {
+     "path": "lessons/030-phys-atomic.md",
+     "title": "الفيزياء الذرية",
+     "group": "lessons",
+     "size": 9160
+    },
+    {
+     "path": "lessons/031-chem-structure.md",
+     "title": "البنية الذرية والجدول الدوري",
+     "group": "lessons",
+     "size": 8434
+    },
+    {
+     "path": "lessons/032-chem-bonding.md",
+     "title": "الروابط الكيميائية",
+     "group": "lessons",
+     "size": 8183
+    },
+    {
+     "path": "lessons/033-chem-phys.md",
+     "title": "الكيمياء الفيزيائية",
+     "group": "lessons",
+     "size": 9097
+    },
+    {
+     "path": "lessons/034-chem-analytical.md",
+     "title": "الكيمياء التحليلية",
+     "group": "lessons",
+     "size": 8663
     }
    ]
   },
@@ -352,7 +436,7 @@
      "path": "README.md",
      "title": "🧭 nuclear — الخريطة الكبرى للعلوم والتكنولوجيا النووية",
      "group": "",
-     "size": 6482
+     "size": 6753
     }
    ]
   }
