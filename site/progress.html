@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ملف المتعلّم — النظام النووي المعرفي</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+<div id="prog">
+  <header>
+    <h1>📈 ملف المتعلّم</h1>
+    <div class="sub">مقروء مباشرة من <code>progress/profile.json</code> — حدّثه بـ
+      <code>python3 tools/tutor.py</code> أو <code>python3 tools/progress.py</code></div>
+    <div class="toolbar">
+      <a class="btn" href="index.html">🧭 الخريطة التفاعلية</a>
+      <a class="btn" href="docs.html">📄 الوثائق</a>
+      <a class="btn" href="../index.html">🏠 الرئيسية</a>
+      <input id="q" type="search" placeholder="ابحث في المواضيع…" autocomplete="off">
+      <select id="lvl"><option value="">كل المستويات</option></select>
+      <label class="chk"><input type="checkbox" id="onlyDone"> المكتملة (≥80٪) فقط</label>
+      <span id="stats" class="stats"></span>
+    </div>
+  </header>
+  <main>
+    <div id="kpis" class="kpis"></div>
+    <table id="tbl">
+      <thead><tr>
+        <th data-k="id">المعرّف</th><th data-k="title">الموضوع</th>
+        <th data-k="domain">المجال</th><th data-k="level">المستوى</th>
+        <th data-k="pct">الإتقان ٪</th><th>شريط</th><th data-k="stage">المرحلة</th>
+        <th data-k="quiz">أعلى اختبار</th><th data-k="updated">آخر تحديث</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </main>
+</div>
+<script src="progress.js"></script>
+</body>
+</html>
